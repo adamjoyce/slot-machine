@@ -21,11 +21,9 @@ public class RaySensor : VisualSensor
         if (tAspectTransform == null)
             tAspectTransform = aAspect.Entity.Form.transform;
 
-        float sizeX = AI.Body.transform.localScale.x;
-        float sizeY = AI.Body.transform.localScale.y + 0.1f;
-
-        sizeX *= 1.5f;
-        sizeY *= 1.5f;
+        float sizeX = AI.Body.GetComponent<Renderer>().bounds.size.x;
+        float sizeY = AI.Body.GetComponent<Renderer>().bounds.size.y + 0.1f;
+        
 
 
         float direction = AI.WorkingMemory.GetItem<float>("direction");

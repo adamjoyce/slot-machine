@@ -55,8 +55,18 @@ public class PlayerController : MonoBehaviour
             wallJumpcurrentCD = -1; 
             float moveHorizontal = Input.GetAxis("Horizontal");
 
-            if(Input.GetAxis("Horizontal") != 0)
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                var oldVel = rb.velocity.x;
                 rb.velocity = new Vector3(moveHorizontal * maxSpeed, rb.velocity.y, 0);
+
+                if (oldVel * moveHorizontal < 0)
+                {
+                    Vector3 theScale = transform.localScale;
+                    theScale.x *= -1;
+                    transform.localScale = theScale;
+                }
+            }
         }
 
     }

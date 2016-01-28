@@ -20,11 +20,11 @@ public class GroundSensor : VisualSensor
         if (tAspectTransform == null)
             tAspectTransform = aAspect.Entity.Form.transform;
 
-        float sizeX = AI.Body.transform.localScale.x;
-        float sizeY = AI.Body.transform.localScale.y + 0.1f;
+        float sizeX = AI.Body.GetComponent<Renderer>().bounds.size.x;
+        float sizeY = AI.Body.GetComponent<Renderer>().bounds.size.y + 0.1f;
 
-        sizeX *= 1.5f;
-        sizeY *= 1.5f;
+        //sizeX *= 1.2f;
+        //sizeY *= 1.2f;
 
         float direction = AI.WorkingMemory.GetItem<float>("direction");
         // Do a physics check against the aspect, may need to add a mask for this
