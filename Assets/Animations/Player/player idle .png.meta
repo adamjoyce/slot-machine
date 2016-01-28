@@ -1,0 +1,844 @@
+fileFormatVersion: 2
+guid: ed3ee6b9d1a43d04b8419b5e9bdb035b
+timeCreated: 1454008720
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: player idle _0
+    21300002: player idle _1
+    21300004: player idle _2
+    21300006: player idle _3
+    21300008: player idle _4
+    21300010: player idle _5
+    21300012: player idle _6
+    21300014: player idle _7
+    21300016: player idle _8
+    21300018: player idle _9
+    21300020: player idle _10
+    21300022: player idle _11
+    21300024: player idle _12
+    21300026: player idle _13
+    21300028: player idle _14
+    21300030: player idle _15
+    21300032: player idle _16
+    21300034: player idle _17
+    21300036: player idle _18
+    21300038: player idle _19
+    21300040: player idle _20
+    21300042: player idle _21
+    21300044: player idle _22
+    21300046: player idle _23
+    21300048: player idle _24
+    21300050: player idle _25
+    21300052: player idle _26
+    21300054: player idle _27
+    21300056: player idle _28
+    21300058: player idle _29
+    21300060: player idle _30
+    21300062: player idle _31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: player idle _0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _2
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _4
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _5
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _6
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _7
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _8
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _9
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _10
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _11
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _12
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _13
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _14
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _15
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _16
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _17
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _18
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _19
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _20
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 0
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -29.5}
+        - {x: 20.5, y: -29.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 16.5, y: -22.5}
+        - {x: 20.5, y: -17.5}
+        - {x: 20.5, y: 8.5}
+        - {x: 17.5, y: 23.5}
+        - {x: 14.5, y: 29.5}
+        - {x: -0.5, y: 29.5}
+        - {x: -9.5, y: 25.5}
+        - {x: -18.5, y: 7.5}
+        - {x: -19.5, y: -12.5}
+        - {x: -19.5, y: -29.5}
+        - {x: -2.5, y: -29.5}
+        - {x: -2.5, y: -27.5}
+        - {x: -6.5, y: -23.5}
+        - {x: -0.5, y: -23.5}
+    - name: player idle _21
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _22
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _23
+      rect:
+        serializedVersion: 2
+        x: 2955
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _24
+      rect:
+        serializedVersion: 2
+        x: 3083
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _25
+      rect:
+        serializedVersion: 2
+        x: 3211
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _26
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _27
+      rect:
+        serializedVersion: 2
+        x: 3467
+        y: 0
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -22.5}
+        - {x: -0.5, y: -28.5}
+        - {x: 20.5, y: -28.5}
+        - {x: 20.5, y: 27.5}
+        - {x: 19.5, y: 28.5}
+        - {x: 2.5, y: 28.5}
+        - {x: -6.5, y: 23.5}
+        - {x: -16.5, y: 6.5}
+        - {x: -19.5, y: -16.5}
+        - {x: -19.5, y: -28.5}
+        - {x: -2.5, y: -28.5}
+        - {x: -2.5, y: -26.5}
+        - {x: -0.5, y: -20.5}
+        - {x: 1.5, y: -18.5}
+    - name: player idle _28
+      rect:
+        serializedVersion: 2
+        x: 3595
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _29
+      rect:
+        serializedVersion: 2
+        x: 3723
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _30
+      rect:
+        serializedVersion: 2
+        x: 3851
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    - name: player idle _31
+      rect:
+        serializedVersion: 2
+        x: 3979
+        y: 0
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 29.5}
+        - {x: -7.5, y: 24.5}
+        - {x: -16.5, y: 7.5}
+        - {x: -20.5, y: -1.5}
+        - {x: -20.5, y: -29.5}
+        - {x: 21.5, y: -29.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
