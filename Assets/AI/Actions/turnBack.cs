@@ -19,14 +19,23 @@ public class turnBack : RAINAction
         if (ai.WorkingMemory.GetItem<float>("direction") == 1.0f)
         {
             ai.WorkingMemory.SetItem<float>("direction", -1.0f);
+            if (ai.Body.transform.localScale.x < 0)
+            {
+                Vector3 myScale = ai.Body.transform.localScale;
+                myScale.x *= -1;
+                ai.Body.transform.localScale = myScale;
+            }
         }
         else
         {
             ai.WorkingMemory.SetItem<float>("direction", 1.0f);
+            if (ai.Body.transform.localScale.x > 0)
+            {
+                Vector3 myScale = ai.Body.transform.localScale;
+                myScale.x *= -1;
+                ai.Body.transform.localScale = myScale;
+            }
         }
-        Vector3 theScale = ai.Body.transform.localScale;
-        theScale.x *= -1;
-        ai.Body.transform.localScale = theScale;
         float direction = ai.WorkingMemory.GetItem<float>("direction");
         ai.Senses.Sensors[0].AngleOffset = new Vector3(0, direction * 90, 0);
 

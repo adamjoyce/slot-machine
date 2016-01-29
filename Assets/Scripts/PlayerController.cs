@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 
     public float maxSpeed;
     public float jumpSpeed;
+    private bool facingRight;
 
     private Rigidbody2D rb;
     private JumpStatus jumpStatus;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         jumpStatus = JumpStatus.GROUND;
         wallJumpcurrentCD = -1;
+        facingRight = true;
     }
 
     void Update()
@@ -57,14 +59,23 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetAxis("Horizontal") != 0)
             {
-                var oldVel = rb.velocity.x;
                 rb.velocity = new Vector3(moveHorizontal * maxSpeed, rb.velocity.y, 0);
+                if (Input.GetAxis("Horizontal") < 0)
+                    facingRight = false;
+                else
+                    facingRight = true;
 
-                if (oldVel * moveHorizontal < 0)
+
+
+                if (wallColl == null)
                 {
-                    Vector3 theScale = transform.localScale;
-                    theScale.x *= -1;
-                    transform.localScale = theScale;
+                    if ((facingRight && transform.localScale.x < 0) || 
+                        !facingRight && transform.localScale.x > 0)
+                    {
+                        Vector3 theScale = transform.localScale;
+                        theScale.x *= -1;
+                        transform.localScale = theScale;
+                    }
                 }
             }
         }
