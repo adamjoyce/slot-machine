@@ -64,14 +64,19 @@ public class PlayerController : MonoBehaviour
             if (weaponName == "Knife")
             {
                 this.transform.Find("Knife(Clone)").GetComponent<BoxCollider2D>().enabled = true;
+                this.transform.Find("Knife(Clone)").GetComponent<Knife>().enemiesHit = new System.Collections.Generic.List<GameObject>();
                 StartCoroutine(DisableDagger(0.5f));
             }
         }
         else if (Input.GetKey(KeyCode.Mouse0))
         {
+            Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+            Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
+            int direction = 1;
+            if (!facingRight) direction *= -1;
             if (weaponName == "Gun" && nextBullet <= 0)
             {
-                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position, new Quaternion());
+                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position + new Vector3(direction *0.4f,0,0), new Quaternion());
                 newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
                 float bulletVel = 5.0f;
                 if (!facingRight) bulletVel *= -1;
@@ -83,12 +88,20 @@ public class PlayerController : MonoBehaviour
                 GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Rocket"), this.transform.position, new Quaternion());
                 newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
                 float bulletVel = 12.0f;
-                Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-                Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
                 Vector2 dir = (mouseposition - currentposition);
                 dir.Normalize();
                 newBullet.GetComponent<Rigidbody2D>().velocity = dir * bulletVel;
                 nextBullet = rocketLauncherCD;
+            }
+
+
+
+            if((facingRight && mouseposition.x < currentposition.x) || (!facingRight && mouseposition.x > currentposition.x))
+            {
+                facingRight = !facingRight;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
             }
         }
 
@@ -151,15 +164,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "Wall")
         {
             wallColl = null;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.name == "Enemy")
-        {
-            Debug.Log("Killing Enemy");
-            Destroy(collision.gameObject);
         }
     }
 }

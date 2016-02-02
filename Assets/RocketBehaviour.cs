@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RocketBehaviour : MonoBehaviour {
 
+
+    public int RocketDamage = 20;
 	// Use this for initialization
 	void Start () {
 	
