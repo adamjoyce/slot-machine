@@ -33,10 +33,12 @@ public class SlotMachine : MonoBehaviour {
     weaponObjects = new GameObject[weapons.Length];
     enemyObjects = new GameObject[enemies.Length];
 
+    // To randomly assign the visible item for each slot.
     int randSlot0 = Random.Range(0, levels.Length);
     int randSlot1 = Random.Range(0, weapons.Length);
     int randSlot2 = Random.Range(0, enemies.Length);
 
+    // Level setup.
     for (int i = 0; i < levels.Length; i++) {
       levelObjects[i] = GameObject.Find(levels[i]);
       if (i == randSlot0) {
@@ -47,6 +49,7 @@ public class SlotMachine : MonoBehaviour {
       }
     }
 
+    // Weapons setup.
     for (int i = 0; i < weapons.Length; i++) {
       weaponObjects[i] = GameObject.Find(weapons[i]);
       if (i == randSlot1) {
@@ -57,6 +60,7 @@ public class SlotMachine : MonoBehaviour {
       }
     }
 
+    // Enemy setup.
     for (int i = 0; i < enemies.Length; i++) {
       enemyObjects[i] = GameObject.Find(enemies[i]);
       if (i == randSlot2) {
@@ -70,6 +74,7 @@ public class SlotMachine : MonoBehaviour {
 
   // Update is called once per frame.
   private void Update() {
+    // Detect when the lever is pulled.
     if (Input.GetMouseButtonDown(0)) {
       RaycastHit hit;
       if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
@@ -77,38 +82,37 @@ public class SlotMachine : MonoBehaviour {
           // Lever animation...
           Debug.Log("Lever Animation");
 
+          // Reset state variables.
           slotsTimer = 0.0f;
           previousAnimationTime = 0.0f;
-
           animateSlot0 = true;
           animateSlot1 = true;
 
+          // Determine random incremental stopping times for the reels.
           float min = 10.0f;
           float max = 13.0f;
           float increment = 3.0f;
-
           stopTime0 = Random.Range(min, max);
           min += increment;
           max += increment;
-
           stopTime1 = Random.Range(min, max);
           min += increment;
           max += increment;
-
           stopTime2 = Random.Range(min, max);
 
-          // Slots animation...
+          // Allows the slots animation to play.
           slotsAnimation = true;
         }
       }
     }
 
+    // Simulate the slots animation.
     if (slotsAnimation) {
       slotsTimer += Time.deltaTime;
 
       if (slotsTimer >= stopTime2) {
         slotsAnimation = false;
-        //ShowResults();
+        // Detect results and load level.
       } else if (slotsTimer >= stopTime1) {
         animateSlot0 = false;
         animateSlot1 = false;
@@ -116,6 +120,7 @@ public class SlotMachine : MonoBehaviour {
         animateSlot0 = false;
       }
 
+      // Simulates the time between animations.
       if (slotsTimer - previousAnimationTime >= interval) {
         // Animate the first slot.
         if (animateSlot0) {
