@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpSpeed;
     private bool facingRight;
+    public string weaponName = "Knife";
+    public float bulletCD = 1.0f;
+    public float rocketLauncherCD = 2.0f;
+    private float nextBullet;
 
     private Rigidbody2D rb;
     private JumpStatus jumpStatus;
@@ -25,10 +29,18 @@ public class PlayerController : MonoBehaviour
         jumpStatus = JumpStatus.GROUND;
         wallJumpcurrentCD = -1;
         facingRight = true;
+        nextBullet = 0;
+
+
+
+        GameObject weapon = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Weapon").transform.Find(weaponName).gameObject, this.transform.position, new Quaternion());
+        weapon.transform.parent = this.transform;
     }
 
     void Update()
     {
+        if (nextBullet > 0)
+            nextBullet -= Time.deltaTime;
         bool keyDown = (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W));
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && wallColl != null)
         {
@@ -38,7 +50,7 @@ public class PlayerController : MonoBehaviour
             wallJumpcurrentCD = 0;
 
         }
-        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && (jumpStatus != JumpStatus.DOUBLEJUMPING))
+        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (jumpStatus != JumpStatus.DOUBLEJUMPING))
         {
             if (jumpStatus == JumpStatus.JUMPING)
                 jumpStatus = JumpStatus.DOUBLEJUMPING;
@@ -46,6 +58,46 @@ public class PlayerController : MonoBehaviour
                 jumpStatus = JumpStatus.JUMPING;
             rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, 0);
         }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (weaponName == "Knife")
+            {
+                this.transform.Find("Knife(Clone)").GetComponent<BoxCollider2D>().enabled = true;
+                StartCoroutine(DisableDagger(0.5f));
+            }
+        }
+        else if (Input.GetKey(KeyCode.Mouse0))
+        {
+            if (weaponName == "Gun" && nextBullet <= 0)
+            {
+                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position, new Quaternion());
+                newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
+                float bulletVel = 5.0f;
+                if (!facingRight) bulletVel *= -1;
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletVel, 0);
+                nextBullet = bulletCD;
+            }
+            else if (weaponName == "RocketLauncher" && nextBullet <= 0)
+            {
+                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Rocket"), this.transform.position, new Quaternion());
+                newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
+                float bulletVel = 12.0f;
+                Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+                Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
+                Vector2 dir = (mouseposition - currentposition);
+                dir.Normalize();
+                newBullet.GetComponent<Rigidbody2D>().velocity = dir * bulletVel;
+                nextBullet = rocketLauncherCD;
+            }
+        }
+
+    }
+
+    IEnumerator DisableDagger(float time)
+    {
+        yield return new WaitForSeconds(time);
+        this.transform.Find("Knife(Clone)").GetComponent<BoxCollider2D>().enabled = false;
     }
 
     void FixedUpdate()
@@ -99,6 +151,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "Wall")
         {
             wallColl = null;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "Enemy")
+        {
+            Debug.Log("Killing Enemy");
+            Destroy(collision.gameObject);
         }
     }
 }
