@@ -25,9 +25,11 @@ public class SlotMachine : MonoBehaviour {
   public int frameInterval = 10;
 
   private float slotsTimer = 0.0f;
+  private float previousAnimationTime = 0.0f;
+
   private const float slowTime = 7.0f;
-  private const float slowTimeInterval = 3.0f;
-  private const float stopTIme = 18.0f;
+  private const float interval = 0.05f;
+  private float stopTime0, stopTime1, stopTime2;
 
   // Initilisation / assignment.
   private void Start() {
@@ -35,34 +37,33 @@ public class SlotMachine : MonoBehaviour {
     weaponObjects = new GameObject[weapons.Length];
     enemyObjects = new GameObject[enemies.Length];
 
-    //int randSlot1 = Random.Range(0, levels.Length);
-    //int randSlot2 = Random.Range(0, weapons.Length);
-    //int randSlot3 = Random.Range(0, enemies.Length);
+    int randSlot0 = Random.Range(0, levels.Length);
+    int randSlot1 = Random.Range(0, weapons.Length);
+    int randSlot2 = Random.Range(0, enemies.Length);
 
-    /*for (int i = 0; i < levels.Length; i++) {
+    for (int i = 0; i < levels.Length; i++) {
       levelObjects[i] = GameObject.Find(levels[i]);
-      Debug.Log(levels[i]);
-      if (i == 0)
+      if (i == randSlot0)
         levelObjects[i].GetComponent<SpriteRenderer>().enabled = true;
       else
         levelObjects[i].GetComponent<SpriteRenderer>().enabled = false;
-    }*/
+    }
 
     for (int i = 0; i < weapons.Length; i++) {
       weaponObjects[i] = GameObject.Find(weapons[i]);
-      if (i == 0)
+      if (i == randSlot1)
         weaponObjects[i].GetComponent<SpriteRenderer>().enabled = true;
       else
         weaponObjects[i].GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    /*for (int i = 0; i < enemies.Length; i++) {
+    for (int i = 0; i < enemies.Length; i++) {
       enemyObjects[i] = GameObject.Find(enemies[i]);
-      if (i == 0)
+      if (i == randSlot2)
         enemyObjects[i].GetComponent<SpriteRenderer>().enabled = true;
       else
         enemyObjects[i].GetComponent<SpriteRenderer>().enabled = false;
-    }*/
+    }
   }
 
   // Update is called once per frame.
@@ -74,8 +75,19 @@ public class SlotMachine : MonoBehaviour {
           // Lever animation...
           Debug.Log("Lever Animation");
 
-          // Spin Slots.
-          string[] results = SpinSlots();
+          float min = 10.0f;
+          float max = 13.0f;
+          float increment = 3.0f;
+
+          stopTime0 = Random.Range(min, max);
+          min = max;
+          max += increment;
+
+          stopTime1 = Random.Range(min, max);
+          min = max;
+          max += increment;
+
+          stopTime2 = Random.Range(min, max);
 
           // Slots animation...
           slotsAnimation = true;
@@ -86,25 +98,25 @@ public class SlotMachine : MonoBehaviour {
     if (slotsAnimation) {
       slotsTimer += Time.deltaTime;
 
-      if (slotsTimer >= slowTime && slotsTimer < slowTime + slowTimeInterval) {
+      /*if (slotsTimer >= slowTime && slotsTimer < slowTime + slowTimeInterval) {
         frameInterval = 15;
       } else if (slotsTimer >= slowTime + slowTimeInterval && slotsTimer < slowTime + slowTimeInterval * 2) {
         frameInterval = 20;
       } else if (slotsTimer >= slowTime + slowTimeInterval * 2) {
         frameInterval = 25;
-      }
+      }*/
 
-      if (slotsTimer >= stopTIme) {
+      if (slotsTimer >= stopTime0) {
         slotsTimer = 0.0f;
+        previousAnimationTime = 0.0f;
         slotsAnimation = false;
         ShowResults();
       }
 
-      if (frameCount % frameInterval == 0) {
+      if (slotsTimer - previousAnimationTime >= interval || previousAnimationTime == 0.0f) {
         AnimateSlots();
+        previousAnimationTime = slotsTimer;
       }
-
-      frameCount++;
     }
   }
 
@@ -146,9 +158,5 @@ public class SlotMachine : MonoBehaviour {
       slotVisibleIndex = 0;
     else
       slotVisibleIndex++;
-  }
-
-  IEnumerator Wait() {
-    yield return 0;
   }
 }
