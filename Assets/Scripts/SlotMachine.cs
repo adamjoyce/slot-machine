@@ -3,13 +3,9 @@ using System.Collections;
 
 public class SlotMachine : MonoBehaviour {
 
-  public float animationSpeed = 1.0f;
-
   private static readonly string[] levels = { "Fire", "Water", "Plat" };
   private static readonly string[] weapons = { "Knife", "Gun", "Rocket" };
   private static readonly string[] enemies = { "Golem", "Duck", "Bird" };
-
-  private static readonly string[][] slots = { levels, weapons, enemies };
 
   private GameObject[] levelObjects;
   private GameObject[] weaponObjects;
@@ -19,10 +15,7 @@ public class SlotMachine : MonoBehaviour {
 
   private bool slotsAnimation = false;
 
-  private int slotVisibleIndex = 0;
-
-  private int frameCount = 0;
-  public int frameInterval = 10;
+  private int slotVisibleIndex0, slotVisibleIndex1, slotVisibleIndex2;
 
   private float slotsTimer = 0.0f;
   private float previousAnimationTime = 0.0f;
@@ -30,6 +23,9 @@ public class SlotMachine : MonoBehaviour {
   private const float slowTime = 7.0f;
   private const float interval = 0.05f;
   private float stopTime0, stopTime1, stopTime2;
+
+  private bool animateSlot0 = true;
+  private bool animateSlot1 = true;
 
   // Initilisation / assignment.
   private void Start() {
@@ -43,26 +39,32 @@ public class SlotMachine : MonoBehaviour {
 
     for (int i = 0; i < levels.Length; i++) {
       levelObjects[i] = GameObject.Find(levels[i]);
-      if (i == randSlot0)
+      if (i == randSlot0) {
         levelObjects[i].GetComponent<SpriteRenderer>().enabled = true;
-      else
+        slotVisibleIndex0 = i;
+      } else {
         levelObjects[i].GetComponent<SpriteRenderer>().enabled = false;
+      }
     }
 
     for (int i = 0; i < weapons.Length; i++) {
       weaponObjects[i] = GameObject.Find(weapons[i]);
-      if (i == randSlot1)
+      if (i == randSlot1) {
         weaponObjects[i].GetComponent<SpriteRenderer>().enabled = true;
-      else
+        slotVisibleIndex1 = i;
+      } else {
         weaponObjects[i].GetComponent<SpriteRenderer>().enabled = false;
+      }
     }
 
     for (int i = 0; i < enemies.Length; i++) {
       enemyObjects[i] = GameObject.Find(enemies[i]);
-      if (i == randSlot2)
+      if (i == randSlot2) {
         enemyObjects[i].GetComponent<SpriteRenderer>().enabled = true;
-      else
+        slotVisibleIndex2 = i;
+      } else {
         enemyObjects[i].GetComponent<SpriteRenderer>().enabled = false;
+      }
     }
   }
 
@@ -75,16 +77,22 @@ public class SlotMachine : MonoBehaviour {
           // Lever animation...
           Debug.Log("Lever Animation");
 
+          slotsTimer = 0.0f;
+          previousAnimationTime = 0.0f;
+
+          animateSlot0 = true;
+          animateSlot1 = true;
+
           float min = 10.0f;
           float max = 13.0f;
           float increment = 3.0f;
 
           stopTime0 = Random.Range(min, max);
-          min = max;
+          min += increment;
           max += increment;
 
           stopTime1 = Random.Range(min, max);
-          min = max;
+          min += increment;
           max += increment;
 
           stopTime2 = Random.Range(min, max);
@@ -98,65 +106,45 @@ public class SlotMachine : MonoBehaviour {
     if (slotsAnimation) {
       slotsTimer += Time.deltaTime;
 
-      /*if (slotsTimer >= slowTime && slotsTimer < slowTime + slowTimeInterval) {
-        frameInterval = 15;
-      } else if (slotsTimer >= slowTime + slowTimeInterval && slotsTimer < slowTime + slowTimeInterval * 2) {
-        frameInterval = 20;
-      } else if (slotsTimer >= slowTime + slowTimeInterval * 2) {
-        frameInterval = 25;
-      }*/
-
-      if (slotsTimer >= stopTime0) {
-        slotsTimer = 0.0f;
-        previousAnimationTime = 0.0f;
+      if (slotsTimer >= stopTime2) {
         slotsAnimation = false;
-        ShowResults();
+        //ShowResults();
+      } else if (slotsTimer >= stopTime1) {
+        animateSlot0 = false;
+        animateSlot1 = false;
+      } else if (slotsTimer >= stopTime0) {
+        animateSlot0 = false;
       }
 
-      if (slotsTimer - previousAnimationTime >= interval || previousAnimationTime == 0.0f) {
-        AnimateSlots();
+      if (slotsTimer - previousAnimationTime >= interval) {
+        // Animate the first slot.
+        if (animateSlot0) {
+          AnimateSlots(levelObjects, ref slotVisibleIndex0);
+        }
+        // Animate the second slot.
+        if (animateSlot1) {
+          AnimateSlots(weaponObjects, ref slotVisibleIndex1);
+        }
+        // Animate the third slot.
+        AnimateSlots(enemyObjects, ref slotVisibleIndex2);
+
         previousAnimationTime = slotsTimer;
       }
     }
   }
 
-  // 
-  private string[] SpinSlots() {
-    string[] slotsResults = new string[slots.Length];
-
-    int rand;
-    for (int i = 0; i < slots.Length; i++) {
-      rand = Random.Range(0, slots[i].Length - 1);
-      slotsResults[i] = slots[i][rand];
-    }
-
-    //for (int i = 0; i < slotsResults.Length; i++) {
-    //Debug.Log(slotsResults[i] + " ");
-    //}
-    //Debug.Log("\n");
-
-    return slotsResults;
-  }
-
-  // Show results of the spin.
-  private void ShowResults() {
-
-  }
-
   // Animation logic.
-  private void AnimateSlots() {
-    int nextIndex = slotVisibleIndex + 1;
-    if (weaponObjects[slotVisibleIndex].GetComponent<SpriteRenderer>().enabled) {
-      if (slotVisibleIndex == weaponObjects.Length - 1) {
+  private void AnimateSlots(GameObject[] slot, ref int slotVisibleIndex) {
+    int nextIndex = 0;
+    if (slot[slotVisibleIndex].GetComponent<SpriteRenderer>().enabled) {
+      // Check for index wrapping.
+      if (slotVisibleIndex == slot.Length - 1)
         nextIndex = 0;
-      }
-      weaponObjects[slotVisibleIndex].GetComponent<SpriteRenderer>().enabled = false;
-      weaponObjects[nextIndex].GetComponent<SpriteRenderer>().enabled = true;
+      else
+        nextIndex = slotVisibleIndex + 1;
+      slot[slotVisibleIndex].GetComponent<SpriteRenderer>().enabled = false;
+      slot[nextIndex].GetComponent<SpriteRenderer>().enabled = true;
     }
-
-    if (slotVisibleIndex == weaponObjects.Length - 1)
-      slotVisibleIndex = 0;
-    else
-      slotVisibleIndex++;
+    slotVisibleIndex = nextIndex;
   }
 }
