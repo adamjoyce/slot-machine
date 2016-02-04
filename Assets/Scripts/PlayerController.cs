@@ -41,6 +41,20 @@ public class PlayerController : MonoBehaviour
     {
         if (nextBullet > 0)
             nextBullet -= Time.deltaTime;
+
+        if(this.jumpStatus != JumpStatus.GROUND)
+        {
+            GetComponent<Animator>().Play("Jump");
+        }
+        else if(Input.GetAxis("Horizontal") != 0)
+        {
+            GetComponent<Animator>().Play("Run");
+        }
+        else
+        {
+            GetComponent<Animator>().Play("Idle");
+        }
+
         bool keyDown = (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W));
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && wallColl != null)
         {
@@ -76,7 +90,7 @@ public class PlayerController : MonoBehaviour
             if (!facingRight) direction *= -1;
             if (weaponName == "Gun" && nextBullet <= 0)
             {
-                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position + new Vector3(direction *0.4f,0,0), new Quaternion());
+                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position + new Vector3(direction *0.4f,0.5f,0), new Quaternion());
                 newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
                 float bulletVel = 5.0f;
                 if (!facingRight) bulletVel *= -1;
@@ -85,7 +99,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (weaponName == "RocketLauncher" && nextBullet <= 0)
             {
-                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Rocket"), this.transform.position, new Quaternion());
+                GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Rocket"), this.transform.position + new Vector3(0,0.5f,0), new Quaternion());
                 newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
                 float bulletVel = 12.0f;
                 Vector2 dir = (mouseposition - currentposition);
@@ -134,7 +148,7 @@ public class PlayerController : MonoBehaviour
 
                 if (wallColl == null)
                 {
-                    if ((facingRight && transform.localScale.x < 0) || 
+                    if ((facingRight && transform.localScale.x < 0) ||
                         !facingRight && transform.localScale.x > 0)
                     {
                         Vector3 theScale = transform.localScale;
