@@ -20,7 +20,6 @@ public class SlotMachine : MonoBehaviour {
   private float slotsTimer = 0.0f;
   private float previousAnimationTime = 0.0f;
 
-  private const float slowTime = 7.0f;
   private const float interval = 0.05f;
   private float stopTime0, stopTime1, stopTime2;
 
