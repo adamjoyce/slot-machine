@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collide)
     {
-        if (this.name == "Bullet(Clone)" && (collide.name.Substring(0,5) == "Enemy"))
+        if (this.name == "Bullet(Clone)" && (collide.name.Length >= 5 && collide.name.Substring(0,5) == "Enemy"))
         {
             collide.gameObject.GetComponent<Enemy>().inflictDamage(bulletDamage);
             Destroy(this.gameObject);

@@ -11,12 +11,15 @@ public class Enemy : MonoBehaviour {
     // Use this for initialization
     void Start () {
         nextFireball = 0;
-	}
+        if (!this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.ItemExists("direction"))
+            this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem<float>("direction", -1.0f);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (this.name.Substring(0, 15) == "Enemy - Spitter")
+        if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
         {
             if (nextFireball > 0)
                 nextFireball -= Time.deltaTime;
