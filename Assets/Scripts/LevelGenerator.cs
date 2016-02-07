@@ -4,14 +4,16 @@ using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
 
-  public GameObject largePlatformPrefab;
+  public GameObject platformPrefab;
+  public GameObject platformColliderPrefab;
 
   public int noLargePlatforms;
 
   private float gridHeight;
   private float gridWidth;
 
-  private List<GameObject> largePlatforms;
+  private List<GameObject> platforms;
+  private List<GameObject> platformColliders;
 
   void Start() {
     Camera camera = Camera.main;
@@ -20,39 +22,54 @@ public class LevelGenerator : MonoBehaviour {
     gridHeight = frustrumHeight;
     gridWidth = frustrumWidth;
 
-    largePlatforms = new List<GameObject>();
-    GeneratePlatforms(largePlatformPrefab);
+    platforms = new List<GameObject>();
+    platformColliders = new List<GameObject>();
+
+    GeneratePlatformColliders();
+    PlacePlatforms();
   }
 
-  private void GeneratePlatforms(GameObject platformPrefab) {
+  private void GeneratePlatformColliders() {
     float width = gridWidth * 0.5f;
     float height = gridHeight * 0.5f;
     float platX = 0;
     float platY = 0;
 
-    // Instantiate Large platforms with random positions.
-    for (int i = 0; i < noLargePlatforms; i++) {
-      width -= platformPrefab.transform.localScale.x;
-      height -= platformPrefab.transform.localScale.y;
+    float radius = platformColliderPrefab.GetComponent<CircleCollider2D>().radius;
+    width -= radius;
+    height -= radius;
 
+    // Instantiate platform colliders with random positions.
+    for (int i = 0; i < noLargePlatforms; i++) {
       platX = Random.Range(-width, width);
       platY = Random.Range(-height, height);
-      GameObject platform = Instantiate(largePlatformPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
+      GameObject platformCollider = Instantiate(platformColliderPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
       //platform.GetComponent<Rigidbody>().isKinematic = true;
 
-      largePlatforms.Add(platform);
+      platformColliders.Add(platformCollider);
     }
+  }
+
+  // Place platforms at the collider origins and delete the colliders.
+  private void PlacePlatforms() {
+    for (int i = 0; i < platformColliders.Count; i++) {
+      float x = platformColliders[i].GetComponent<Transform>().position.x;
+      float y = platformColliders[i].GetComponent<Transform>().position.y;
+      GameObject platform = Instantiate(platformPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+      platforms.Add(platform);
+    }
+  }
 
     //StartCoroutine("PhysicsStep");
 
     //for (int i = 0; i < largePlatforms.Count; i++) {
-      //largePlatforms[i].GetComponent<Rigidbody>().isKinematic = true;
+    //largePlatforms[i].GetComponent<Rigidbody>().isKinematic = true;
     //}
   }
 
-  IEnumerator PhysicsStep() {
-    yield return new WaitForFixedUpdate();
-  }
+  //IEnumerator PhysicsStep() {
+    //yield return new WaitForFixedUpdate();
+  //}
 
   // Check that one platform's area does not intersect another platform's area.
   /*private bool PlatformsIntersect(GameObject platform) {
@@ -178,4 +195,4 @@ public class LevelGenerator : MonoBehaviour {
 
       return false;
     }*/
-  }
+  

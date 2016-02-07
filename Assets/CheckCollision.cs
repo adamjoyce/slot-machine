@@ -13,7 +13,7 @@ public class CheckCollision : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     if (!colliding) {
-      this.GetComponent<Rigidbody>().isKinematic = true;
+      this.GetComponent<Rigidbody2D>().isKinematic = true;
     }
     colliding = false;
   }
