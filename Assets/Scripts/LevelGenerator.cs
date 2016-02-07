@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
 
-  /*public int noLargePlatforms;
+  public int noLargePlatforms;
   public int noMediumPlatforms;
   public int noSmallPlatforms;
 
@@ -36,8 +36,8 @@ public class LevelGenerator : MonoBehaviour {
 	void Update () {
     if (Input.GetButtonDown("Fire1")) {
       // Spin the reels and record the results.
-      slotMachine.SpinSlots();
-      slotResults = slotMachine.GetSlotOutput();
+      //slotMachine.SpinSlots();
+      //slotResults = slotMachine.GetSlotOutput();
 
       // Load the correct level.
       LoadFireLevel();
@@ -115,5 +115,5 @@ public class LevelGenerator : MonoBehaviour {
     }
 
     return false;
-  }*/
+  }
 }
