@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float bulletCD = 1.0f;
     public float rocketLauncherCD = 2.0f;
     private float nextBullet;
+    public float bulletVelocity = 5.0f;
+
+    public int HP = 50;
 
     private Rigidbody2D rb;
     private JumpStatus jumpStatus;
@@ -21,13 +24,13 @@ public class PlayerController : MonoBehaviour
         DOUBLEJUMPING
     };
     private GameObject wallColl;
-    public float wallJumpCD;
-    private float wallJumpcurrentCD;
+    public float KBDuration;
+    private float currentKB;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         jumpStatus = JumpStatus.GROUND;
-        wallJumpcurrentCD = -1;
+        currentKB = -1;
         facingRight = true;
         nextBullet = 0;
 
@@ -61,7 +64,7 @@ public class PlayerController : MonoBehaviour
             float direction = GetComponent<Transform>().position.x - wallColl.GetComponent<Transform>().position.x / Mathf.Abs(GetComponent<Transform>().position.x - wallColl.GetComponent<Transform>().position.x);
             rb.velocity = new Vector3(0, jumpSpeed, 0);
             rb.AddForce(new Vector2(direction * maxSpeed, 0), ForceMode2D.Impulse);
-            wallJumpcurrentCD = 0;
+            currentKB = 0;
 
         }
         else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (jumpStatus != JumpStatus.DOUBLEJUMPING))
@@ -92,9 +95,9 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position + new Vector3(direction *0.4f,0.5f,0), new Quaternion());
                 newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
-                float bulletVel = 5.0f;
-                if (!facingRight) bulletVel *= -1;
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletVel, 0);
+                Vector2 dir = (mouseposition - currentposition);
+                if (dir.x < 0) bulletVelocity *= -1;
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletVelocity, 0);
                 nextBullet = bulletCD;
             }
             else if (weaponName == "RocketLauncher" && nextBullet <= 0)
@@ -129,11 +132,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (wallJumpcurrentCD >= 0)
-            wallJumpcurrentCD += Time.deltaTime;
-        if(wallJumpcurrentCD == -1 || wallJumpcurrentCD > wallJumpCD)
+        if (currentKB >= 0)
+            currentKB += Time.deltaTime;
+        if(currentKB == -1 || currentKB > KBDuration)
         {
-            wallJumpcurrentCD = -1; 
+            currentKB = -1; 
             float moveHorizontal = Input.GetAxis("Horizontal");
 
             if (Input.GetAxis("Horizontal") != 0)
@@ -159,6 +162,18 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    public void inflictDamage(int dmg, Vector3 incPos)
+    {
+        HP -= dmg;
+        Vector3 direction = this.transform.position - incPos;
+        currentKB = 0;
+        rb.velocity = new Vector3(0, 0, 0);
+        direction.Normalize();
+        rb.AddForce(direction * maxSpeed, ForceMode2D.Impulse);
+        if (HP <= 0)
+            Destroy(this.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
