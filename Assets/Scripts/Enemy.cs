@@ -4,15 +4,36 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
     public int HP = 20;
+    public float nextFireball;
+    public float fireballCD = 0.6f;
+    float fireballVelocity = 4.0f;
 
-	// Use this for initialization
-	void Start () {
-	
+    // Use this for initialization
+    void Start () {
+        nextFireball = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    
+
+        if (this.name.Substring(0, 15) == "Enemy - Spitter")
+        {
+            if (nextFireball > 0)
+                nextFireball -= Time.deltaTime;
+            else
+            {
+                var player = this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.GetItem<GameObject>("playerFound");
+                if (player != null && Mathf.Abs((player.transform.position - transform.position).magnitude) < 3.0f)
+                {
+                    Vector3 direction = ((player.transform.position + new Vector3(0, 0.3f, 0)) - transform.position);
+                    direction.Normalize();
+                    GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Fireball"), this.transform.position + new Vector3(direction.x * 0.4f, 0.2f, 0), new Quaternion());
+                    newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
+                    newBullet.GetComponent<Rigidbody2D>().velocity = direction * fireballVelocity;
+                    nextFireball = fireballCD;
+                }
+            }
+        }
 	}
 
     public int inflictDamage(int damage)
