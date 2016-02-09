@@ -88,16 +88,16 @@ public class SlotMachine : MonoBehaviour {
           animateSlot1 = true;
 
           // Determine random incremental stopping times for the reels.
-          float min = 10.0f;
-          float max = 13.0f;
-          float increment = 3.0f;
+          float min = 5.0f;
+          float max = 7.0f;
+          float increment = 1.0f;
           stopTime0 = Random.Range(min, max);
-          min += increment;
-          max += increment;
-          stopTime1 = Random.Range(min, max);
-          min += increment;
-          max += increment;
-          stopTime2 = Random.Range(min, max);
+          //min += increment;
+          //max += increment;
+          stopTime1 = stopTime0 + increment;//Random.Range(min, max);
+          //min += increment;
+          //max += increment;
+          stopTime2 = stopTime1 + increment;//Random.Range(min, max);
 
           // Allows the slots animation to play.
           slotsAnimation = true;
@@ -113,7 +113,9 @@ public class SlotMachine : MonoBehaviour {
         slotsAnimation = false;
         // Detect results and load level.
         string[] results = getSlotResults();
-        Application.LoadLevel("_Scenes/" + "Level " + results[0]);
+        if (Input.GetKeyDown(KeyCode.Space)) {
+          Application.LoadLevel("_Scenes/" + "Level " + results[0]);
+        }
       } else if (slotsTimer >= stopTime1) {
         animateSlot0 = false;
         animateSlot1 = false;

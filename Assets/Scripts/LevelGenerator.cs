@@ -6,7 +6,9 @@ public class LevelGenerator : MonoBehaviour {
 
   public GameObject platformPrefab;
 
-  public int noLargePlatforms;
+  // Note some may be culled.
+  public int estimatePlatformNumber;
+  public float maxPlatformHeight;
 
   private float gridHeight;
   private float gridWidth;
@@ -37,7 +39,7 @@ public class LevelGenerator : MonoBehaviour {
     height -= radius;
 
     // Instantiate platform colliders with random positions.
-    for (int i = 0; i < noLargePlatforms; i++) {
+    for (int i = 0; i < estimatePlatformNumber; i++) {
       platX = Random.Range(-width, width);
       platY = Random.Range(-height, height);
       GameObject platformCollider = Instantiate(platformPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
@@ -62,16 +64,19 @@ public class LevelGenerator : MonoBehaviour {
       }
     }
     Debug.Log("Asleep");
-    // Remove/disable circle colliders and rigidbodies - enable sprite renderer.
-    DisableColliders();
+    CullPlatformElements();
   }
 
-  private void DisableColliders() {
+  private void CullPlatformElements() {
     for (int i = 0; i < platformColliders.Count; i++) {
-      //platformColliders[i].GetComponent<Rigidbody2D>().isKinematic = true;
-      Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
-      platformColliders[i].GetComponent<CircleCollider2D>().enabled = false;
-      platformColliders[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
+      //if (platformColliders[i].GetComponent<Transform>().transform.position.y > maxPlatformHeight) {
+        //Destroy(platformColliders[i]);
+      //} else {
+        //platformColliders[i].GetComponent<Rigidbody2D>().isKinematic = true;
+        Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
+        platformColliders[i].GetComponent<CircleCollider2D>().enabled = false;
+        platformColliders[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
+      //}
     }
     Debug.Log("Fixed");
   }

@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         {
             wallColl = collision.gameObject;
         }
-        else if(collision.gameObject.name == "Ground" || collision.gameObject.name == "Platform")
+        else if(collision.gameObject.name == "Ground" || collision.gameObject.name == "Platform" || collision.gameObject.tag == "Platform")
         {
             jumpStatus = JumpStatus.GROUND;
         }
