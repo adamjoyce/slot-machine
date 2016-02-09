@@ -15,6 +15,8 @@ public class LevelGenerator : MonoBehaviour {
   private List<GameObject> platforms;
   private List<GameObject> platformColliders;
 
+  private bool asleep = false;
+
   void Start() {
     Camera camera = Camera.main;
     float frustrumHeight = 2.0f * camera.orthographicSize;
@@ -25,11 +27,11 @@ public class LevelGenerator : MonoBehaviour {
     platforms = new List<GameObject>();
     platformColliders = new List<GameObject>();
 
-    GeneratePlatformColliders();
-    PlacePlatforms();
+    GeneratePlatforms();
+    StartCoroutine(CheckObjectsAreStill());
   }
 
-  private void GeneratePlatformColliders() {
+  private void GeneratePlatforms() {
     float width = gridWidth * 0.5f;
     float height = gridHeight * 0.5f;
     float platX = 0;
@@ -43,11 +45,39 @@ public class LevelGenerator : MonoBehaviour {
     for (int i = 0; i < noLargePlatforms; i++) {
       platX = Random.Range(-width, width);
       platY = Random.Range(-height, height);
-      GameObject platformCollider = Instantiate(platformColliderPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
+      GameObject platformCollider = Instantiate(platformPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
+      Debug.Log(i + ": x" + platX + " y" + platY);
       //platform.GetComponent<Rigidbody>().isKinematic = true;
 
       platformColliders.Add(platformCollider);
     }
+  }
+
+  IEnumerator CheckObjectsAreStill() {
+    Debug.Log("Checking");
+    bool allAsleep = false;
+    while (!allAsleep) {
+      allAsleep = true;
+      Debug.Log("NOT SLEEPING");
+      for (int i = 0; i < platformColliders.Count; i++) {
+        if (!platformColliders[i].GetComponent<Rigidbody2D>().IsSleeping()) {
+          allAsleep = false;
+          yield return null;
+          break;
+        }
+      }
+    }
+    Debug.Log("Asleep");
+    DisableColliders();
+  }
+
+  private void DisableColliders() {
+    for (int i = 0; i < platformColliders.Count; i++) {
+      //platformColliders[i].GetComponent<Rigidbody2D>().isKinematic = true;
+      Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
+      platformColliders[i].GetComponent<CircleCollider2D>().enabled = false;
+    }
+    Debug.Log("Fixed");
   }
 
   // Place platforms at the collider origins and delete the colliders.
@@ -55,6 +85,8 @@ public class LevelGenerator : MonoBehaviour {
     for (int i = 0; i < platformColliders.Count; i++) {
       float x = platformColliders[i].GetComponent<Transform>().position.x;
       float y = platformColliders[i].GetComponent<Transform>().position.y;
+      Debug.Log(i + ": x" + x + " y" + y);
+      //Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
       GameObject platform = Instantiate(platformPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
       platforms.Add(platform);
     }
