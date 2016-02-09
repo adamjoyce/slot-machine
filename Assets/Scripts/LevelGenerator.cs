@@ -5,17 +5,13 @@ using System.Collections.Generic;
 public class LevelGenerator : MonoBehaviour {
 
   public GameObject platformPrefab;
-  public GameObject platformColliderPrefab;
 
   public int noLargePlatforms;
 
   private float gridHeight;
   private float gridWidth;
 
-  private List<GameObject> platforms;
   private List<GameObject> platformColliders;
-
-  private bool asleep = false;
 
   void Start() {
     Camera camera = Camera.main;
@@ -24,7 +20,6 @@ public class LevelGenerator : MonoBehaviour {
     gridHeight = frustrumHeight;
     gridWidth = frustrumWidth;
 
-    platforms = new List<GameObject>();
     platformColliders = new List<GameObject>();
 
     GeneratePlatforms();
@@ -37,7 +32,7 @@ public class LevelGenerator : MonoBehaviour {
     float platX = 0;
     float platY = 0;
 
-    float radius = platformColliderPrefab.GetComponent<CircleCollider2D>().radius;
+    float radius = platformPrefab.GetComponent<CircleCollider2D>().radius;
     width -= radius;
     height -= radius;
 
@@ -46,8 +41,7 @@ public class LevelGenerator : MonoBehaviour {
       platX = Random.Range(-width, width);
       platY = Random.Range(-height, height);
       GameObject platformCollider = Instantiate(platformPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
-      Debug.Log(i + ": x" + platX + " y" + platY);
-      //platform.GetComponent<Rigidbody>().isKinematic = true;
+      //Debug.Log(i + ": x" + platX + " y" + platY);
 
       platformColliders.Add(platformCollider);
     }
@@ -68,6 +62,7 @@ public class LevelGenerator : MonoBehaviour {
       }
     }
     Debug.Log("Asleep");
+    // Remove/disable circle colliders and rigidbodies - enable sprite renderer.
     DisableColliders();
   }
 
@@ -76,20 +71,9 @@ public class LevelGenerator : MonoBehaviour {
       //platformColliders[i].GetComponent<Rigidbody2D>().isKinematic = true;
       Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
       platformColliders[i].GetComponent<CircleCollider2D>().enabled = false;
+      platformColliders[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
     }
     Debug.Log("Fixed");
-  }
-
-  // Place platforms at the collider origins and delete the colliders.
-  private void PlacePlatforms() {
-    for (int i = 0; i < platformColliders.Count; i++) {
-      float x = platformColliders[i].GetComponent<Transform>().position.x;
-      float y = platformColliders[i].GetComponent<Transform>().position.y;
-      Debug.Log(i + ": x" + x + " y" + y);
-      //Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
-      GameObject platform = Instantiate(platformPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-      platforms.Add(platform);
-    }
   }
 
     //StartCoroutine("PhysicsStep");
