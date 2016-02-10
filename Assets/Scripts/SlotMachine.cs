@@ -113,7 +113,7 @@ public class SlotMachine : MonoBehaviour {
         slotsAnimation = false;
         // Detect results and load level.
         string[] results = getSlotResults();
-        Application.LoadLevel("_Scenes/" + "Level " + results[0]);
+        StartCoroutine(WaitAndLoad(3, "_Scenes/" + "Level " + results[0]));
       } else if (slotsTimer >= stopTime1) {
         animateSlot0 = false;
         animateSlot1 = false;
@@ -157,5 +157,11 @@ public class SlotMachine : MonoBehaviour {
   // Get slot results.
   private string[] getSlotResults() {
     return new string[] { levels[slotVisibleIndex0], weapons[slotVisibleIndex1], enemies[slotVisibleIndex2] };
+  }
+
+  // Wait for a number of seconds.
+  IEnumerator WaitAndLoad(int seconds, string scene) {
+    yield return new WaitForSeconds(seconds);
+    Application.LoadLevel(scene);
   }
 }
