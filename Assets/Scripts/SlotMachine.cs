@@ -113,9 +113,7 @@ public class SlotMachine : MonoBehaviour {
         slotsAnimation = false;
         // Detect results and load level.
         string[] results = getSlotResults();
-        if (Input.GetKeyDown(KeyCode.Space)) {
-          Application.LoadLevel("_Scenes/" + "Level " + results[0]);
-        }
+        Application.LoadLevel("_Scenes/" + "Level " + results[0]);
       } else if (slotsTimer >= stopTime1) {
         animateSlot0 = false;
         animateSlot1 = false;
