@@ -9,6 +9,7 @@ public class Knife : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         enemiesHit = new List<GameObject>();
+        this.transform.position = transform.parent.transform.position + new Vector3(0.2f, 0.27f, 0.0f);
 
     }
 	

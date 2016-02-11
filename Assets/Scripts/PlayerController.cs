@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private GameObject wallColl;
     public float KBDuration;
     private float currentKB;
+    private bool usingKnife;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         currentKB = -1;
         facingRight = true;
         nextBullet = 0;
+        usingKnife = false;
 
 
 
@@ -80,12 +82,19 @@ public class PlayerController : MonoBehaviour
         {
             if (weaponName == "Knife")
             {
-                this.transform.Find("Knife(Clone)").GetComponent<BoxCollider2D>().enabled = true;
-                this.transform.Find("Knife(Clone)").GetComponent<Knife>().enemiesHit = new System.Collections.Generic.List<GameObject>();
+                Transform knife = transform.Find("Knife(Clone)");
+                if (knife != null)
+                {
+                    knife.GetComponent<BoxCollider2D>().enabled = true;
+                    knife.GetComponent<Knife>().enemiesHit = new System.Collections.Generic.List<GameObject>();
+                    knife.localPosition = new Vector3(0.2f, 0.27f, 0.0f);
+                    knife.eulerAngles = new Vector3(0, 0, 0);
+                    usingKnife = true;
+                }
                 StartCoroutine(DisableDagger(0.5f));
             }
         }
-        else if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
             Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
@@ -128,6 +137,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         this.transform.Find("Knife(Clone)").GetComponent<BoxCollider2D>().enabled = false;
+        usingKnife = false;
     }
 
     void FixedUpdate()
@@ -158,6 +168,26 @@ public class PlayerController : MonoBehaviour
                         theScale.x *= -1;
                         transform.localScale = theScale;
                     }
+                }
+                Transform knife = transform.Find("Knife(Clone)");
+                if (!usingKnife && knife != null)
+                {
+                    knife.localPosition = new Vector3(0.3f, 0.8f, 0);
+                    knife.eulerAngles = new Vector3(0, 0, 90);
+                }
+                else if (knife != null)
+                {
+                    knife.localPosition = new Vector3(0.5f, 0.65f, 0.0f);
+                    knife.eulerAngles = new Vector3(0, 0, 0);
+                }
+            }
+            else if(!usingKnife && jumpStatus == JumpStatus.GROUND)
+            {
+                Transform knife = transform.Find("Knife(Clone)");
+                if (knife != null)
+                {
+                    knife.localPosition = new Vector3(0.2f, 0.27f, 0.0f);
+                    knife.eulerAngles = new Vector3(0, 0, 0);
                 }
             }
         }
