@@ -19,7 +19,7 @@ public class LevelGenerator : MonoBehaviour {
   private float gridHeight;
   private float gridWidth;
 
-  private List<GameObject> platformColliders;
+  private List<GameObject> platforms;
 
   private GameObject playerSpawnPlatform;  
 
@@ -30,7 +30,7 @@ public class LevelGenerator : MonoBehaviour {
     gridHeight = frustrumHeight;
     gridWidth = frustrumWidth;
 
-    platformColliders = new List<GameObject>();
+    platforms = new List<GameObject>();
 
     GeneratePlatforms();
     StartCoroutine(CheckObjectsAreStill());
@@ -39,8 +39,8 @@ public class LevelGenerator : MonoBehaviour {
   private void GeneratePlatforms() {
     float width = gridWidth * 0.5f;
     float height = gridHeight * 0.5f;
-    float platX = 0;
-    float platY = 0;
+    float platX = 0.0f;
+    float platY = 0.0f;
 
     float radius = platformPrefab.GetComponent<CircleCollider2D>().radius;
     width -= radius;
@@ -53,7 +53,7 @@ public class LevelGenerator : MonoBehaviour {
       GameObject platformCollider = Instantiate(platformPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
       //Debug.Log(i + ": x" + platX + " y" + platY);
 
-      platformColliders.Add(platformCollider);
+      platforms.Add(platformCollider);
     }
   }
 
@@ -63,8 +63,8 @@ public class LevelGenerator : MonoBehaviour {
     while (!allAsleep) {
       allAsleep = true;
       Debug.Log("NOT SLEEPING");
-      for (int i = 0; i < platformColliders.Count; i++) {
-        if (!platformColliders[i].GetComponent<Rigidbody2D>().IsSleeping()) {
+      for (int i = 0; i < platforms.Count; i++) {
+        if (!platforms[i].GetComponent<Rigidbody2D>().IsSleeping()) {
           allAsleep = false;
           yield return null;
           break;
@@ -79,47 +79,56 @@ public class LevelGenerator : MonoBehaviour {
   }
 
   private void CullPlatformElements() {
-    for (int i = 0; i < platformColliders.Count; i++) {
-      //if (platformColliders[i].GetComponent<Transform>().transform.position.y > maxPlatformHeight) {
-        //Destroy(platformColliders[i]);
-        //platformColliders.RemoveAt(i);
-      //} else {
-        //platformColliders[i].GetComponent<Rigidbody2D>().isKinematic = true;
-        Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
-        platformColliders[i].GetComponent<CircleCollider2D>().enabled = false;
-        platformColliders[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
-      //}
+    List<GameObject> plats = new List<GameObject>();
+    for (int i = 0; i < platforms.Count; i++) {
+      float platX = platforms[i].GetComponent<Transform>().transform.position.x;
+      float platY = platforms[i].GetComponent<Transform>().transform.position.y;
+
+      // Destroy platforms outside of the bounds.
+      if (platX >= gridWidth || platX <= -gridWidth || platY >= maxPlatformHeight || platY <= -gridHeight) {
+        Destroy(platforms[i]);
+      } else {
+        Destroy(platforms[i].GetComponent<Rigidbody2D>());
+        platforms[i].GetComponent<CircleCollider2D>().enabled = false;
+        platforms[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
+        plats.Add(platforms[i]);
+      }
     }
     Debug.Log("Fixed");
+    platforms = plats;
   }
 
+  // Spawn the player on a platform.
   private void spawnPlayer() {
     int index = 0;
     //do {
-      index = Random.Range(0, platformColliders.Count);
-      float platX = platformColliders[index].transform.position.x;
-      float platY = platformColliders[index].transform.position.y;
+      index = Random.Range(0, platforms.Count);
+      float platX = platforms[index].transform.position.x;
+      float platY = platforms[index].transform.position.y;
     //} while ();
-    playerSpawnPlatform = platformColliders[index];
+    playerSpawnPlatform = platforms[index];
     Instantiate(playerPrefab, new Vector3(platX, platY, 0), Quaternion.identity);
   }
 
+  //
   private void spawnEnemies(string enemyType) {
     if (enemyType == "Charger") {
+      int index = 0;
       for (int i = 0; i < enemyNumber; i++) {
-        int index = i;
-        if (index == platformColliders.Count) {
+        if (index == platforms.Count) {
           index = 0;
         }
 
         // Do not spawn enemies on the player's starting platform.
-        if (platformColliders[index] == playerSpawnPlatform) {
+        if (platforms[index] == playerSpawnPlatform) {
+          index++;
           continue;
         }
 
-        float x = platformColliders[index].transform.position.x;
-        float y = platformColliders[index].transform.position.y;
+        float x = platforms[index].transform.position.x;
+        float y = platforms[index].transform.position.y;
         Instantiate(chargerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
+        index++;
       }
     }
   }
