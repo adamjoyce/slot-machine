@@ -5,7 +5,7 @@ public class SlotMachine : MonoBehaviour {
 
   private static readonly string[] levels = { "Fire", "Water", "Plat" };
   private static readonly string[] weapons = { "Knife", "Gun", "Rocket" };
-  private static readonly string[] enemies = { "Golem", "Duck", "Bird" };
+  private static readonly string[] enemies = { "Charger", "Spitter", "Flyer" };
 
   private GameObject[] levelObjects;
   private GameObject[] weaponObjects;

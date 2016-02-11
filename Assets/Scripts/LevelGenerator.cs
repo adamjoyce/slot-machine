@@ -5,15 +5,23 @@ using System.Collections.Generic;
 public class LevelGenerator : MonoBehaviour {
 
   public GameObject platformPrefab;
+  public GameObject playerPrefab;
+  public GameObject chargerPrefab;
+  public GameObject spitterPrefab;
+  public GameObject flyerPrefab;
 
   // Note some may be culled.
   public int estimatePlatformNumber;
   public float maxPlatformHeight;
 
+  public int enemyNumber;
+
   private float gridHeight;
   private float gridWidth;
 
   private List<GameObject> platformColliders;
+
+  private GameObject playerSpawnPlatform;  
 
   void Start() {
     Camera camera = Camera.main;
@@ -64,13 +72,17 @@ public class LevelGenerator : MonoBehaviour {
       }
     }
     Debug.Log("Asleep");
+
     CullPlatformElements();
+    spawnPlayer();
+    spawnEnemies("Charger");
   }
 
   private void CullPlatformElements() {
     for (int i = 0; i < platformColliders.Count; i++) {
       //if (platformColliders[i].GetComponent<Transform>().transform.position.y > maxPlatformHeight) {
         //Destroy(platformColliders[i]);
+        //platformColliders.RemoveAt(i);
       //} else {
         //platformColliders[i].GetComponent<Rigidbody2D>().isKinematic = true;
         Destroy(platformColliders[i].GetComponent<Rigidbody2D>());
@@ -79,6 +91,37 @@ public class LevelGenerator : MonoBehaviour {
       //}
     }
     Debug.Log("Fixed");
+  }
+
+  private void spawnPlayer() {
+    int index = 0;
+    //do {
+      index = Random.Range(0, platformColliders.Count);
+      float platX = platformColliders[index].transform.position.x;
+      float platY = platformColliders[index].transform.position.y;
+    //} while ();
+    playerSpawnPlatform = platformColliders[index];
+    Instantiate(playerPrefab, new Vector3(platX, platY, 0), Quaternion.identity);
+  }
+
+  private void spawnEnemies(string enemyType) {
+    if (enemyType == "Charger") {
+      for (int i = 0; i < enemyNumber; i++) {
+        int index = i;
+        if (index == platformColliders.Count) {
+          index = 0;
+        }
+
+        // Do not spawn enemies on the player's starting platform.
+        if (platformColliders[index] == playerSpawnPlatform) {
+          continue;
+        }
+
+        float x = platformColliders[index].transform.position.x;
+        float y = platformColliders[index].transform.position.y;
+        Instantiate(chargerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
+      }
+    }
   }
 
     //StartCoroutine("PhysicsStep");
