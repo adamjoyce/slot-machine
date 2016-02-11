@@ -85,7 +85,7 @@ public class LevelGenerator : MonoBehaviour {
       float platY = platforms[i].GetComponent<Transform>().transform.position.y;
 
       // Destroy platforms outside of the bounds.
-      if (platX >= gridWidth || platX <= -gridWidth || platY >= maxPlatformHeight || platY <= -gridHeight) {
+      if (platX >= gridWidth * 0.5f || platX <= -gridWidth * 0.5f || platY >= maxPlatformHeight || platY <= -gridHeight * 0.5f) {
         Destroy(platforms[i]);
       } else {
         Destroy(platforms[i].GetComponent<Rigidbody2D>());
