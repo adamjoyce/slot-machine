@@ -51,8 +51,6 @@ public class LevelGenerator : MonoBehaviour {
       platX = Random.Range(-width, width);
       platY = Random.Range(-height, height);
       GameObject platformCollider = Instantiate(platformPrefab, new Vector3(platX, platY, 0), Quaternion.identity) as GameObject;
-      //Debug.Log(i + ": x" + platX + " y" + platY);
-
       platforms.Add(platformCollider);
     }
   }
@@ -75,7 +73,7 @@ public class LevelGenerator : MonoBehaviour {
 
     CullPlatformElements();
     spawnPlayer();
-    spawnEnemies("Charger");
+    spawnEnemies("Flyer");
   }
 
   private void CullPlatformElements() {
@@ -83,9 +81,11 @@ public class LevelGenerator : MonoBehaviour {
     for (int i = 0; i < platforms.Count; i++) {
       float platX = platforms[i].GetComponent<Transform>().transform.position.x;
       float platY = platforms[i].GetComponent<Transform>().transform.position.y;
+      float width = gridWidth * 0.5f;
+      float height = gridHeight * 0.5f;
 
       // Destroy platforms outside of the bounds.
-      if (platX >= gridWidth * 0.5f || platX <= -gridWidth * 0.5f || platY >= maxPlatformHeight || platY <= -gridHeight * 0.5f) {
+      if (platX >= width || platX <= -width || platY >= maxPlatformHeight || platY <= -height) {
         Destroy(platforms[i]);
       } else {
         Destroy(platforms[i].GetComponent<Rigidbody2D>());
@@ -112,6 +112,7 @@ public class LevelGenerator : MonoBehaviour {
 
   //
   private void spawnEnemies(string enemyType) {
+    // Charger.
     if (enemyType == "Charger") {
       int index = 0;
       for (int i = 0; i < enemyNumber; i++) {
@@ -121,6 +122,8 @@ public class LevelGenerator : MonoBehaviour {
 
         // Do not spawn enemies on the player's starting platform.
         if (platforms[index] == playerSpawnPlatform) {
+          // Keep the index value for the enemy the same.
+          i--;
           index++;
           continue;
         }
@@ -129,6 +132,17 @@ public class LevelGenerator : MonoBehaviour {
         float y = platforms[index].transform.position.y;
         Instantiate(chargerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
         index++;
+      }
+    }
+
+    // Spitter.
+
+    // Flyer.
+    if (enemyType == "Flyer") {
+      for (int i = 0; i < enemyNumber; i++) {
+        float x = Random.Range(-gridWidth * 0.5f, gridWidth * 0.5f);
+        float y = Random.Range(maxPlatformHeight, gridHeight * 0.5f);
+        Instantiate(flyerPrefab, new Vector3(x, y, 0), Quaternion.identity);
       }
     }
   }
