@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: a166a8ba18c42ed4a80a52139f1d8455
+timeCreated: 1455239177
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Golem_0
+    21300002: Golem_1
+    21300004: Golem_2
+    21300006: Golem_3
+    21300008: Golem_4
+    21300010: Golem_5
+    21300012: Golem_6
+    21300014: Golem_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Golem_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 226
+        height: 291
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 69.54286, y: 212.92285}
+        - {x: -43.457138, y: 212.92285}
+        - {x: -72.45714, y: 191.92285}
+        - {x: -82.45714, y: 173.92285}
+        - {x: -82.45714, y: 47.92286}
+        - {x: -78.45714, y: -0.07714081}
+        - {x: 78.54286, y: -0.07714081}
+        - {x: 83.54286, y: 12.922859}
+        - {x: 83.54286, y: 203.92285}
+    - name: Golem_1
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 0
+        width: 226
+        height: 299
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83.46857, y: 213.84857}
+        - {x: 76.46857, y: 218.84857}
+        - {x: -60.531433, y: 218.84857}
+        - {x: -82.53143, y: 185.84857}
+        - {x: -82.53143, y: 93.84857}
+        - {x: -77.53143, y: 63.84857}
+        - {x: -61.531433, y: -0.15142822}
+        - {x: 56.468567, y: -0.15142822}
+        - {x: 76.46857, y: 17.848572}
+        - {x: 79.46857, y: 90.84857}
+        - {x: 83.46857, y: 119.84857}
+    - name: Golem_2
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 0
+        width: 230
+        height: 307
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.105713, y: 224.77429}
+        - {x: -53.105713, y: 222.77429}
+        - {x: -76.10571, y: 194.77429}
+        - {x: -84.10571, y: 183.77429}
+        - {x: -84.10571, y: 67.774284}
+        - {x: -35.105713, y: -0.22571564}
+        - {x: 45.894287, y: -0.22571564}
+        - {x: 84.89429, y: 122.774284}
+        - {x: 84.89429, y: 208.77429}
+        - {x: 75.89429, y: 224.77429}
+    - name: Golem_3
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 0
+        width: 226
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.605713, y: 231.5657}
+        - {x: -82.60571, y: 192.5657}
+        - {x: -82.60571, y: 115.56571}
+        - {x: -55.605713, y: 64.56571}
+        - {x: -35.605713, y: -0.43428802}
+        - {x: 23.394287, y: -0.43428802}
+        - {x: 83.39429, y: 127.56571}
+        - {x: 83.39429, y: 228.5657}
+        - {x: 74.39429, y: 231.5657}
+    - name: Golem_4
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 0
+        width: 226
+        height: 291
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83.54285, y: 32.92286}
+        - {x: 83.54285, y: 197.92285}
+        - {x: 77.54285, y: 212.92285}
+        - {x: -29.457153, y: 212.92285}
+        - {x: -82.45715, y: 197.92285}
+        - {x: -82.45715, y: 55.92286}
+        - {x: -67.45715, y: -0.07714081}
+        - {x: -8.457153, y: -0.07714081}
+        - {x: -4.4571533, y: 4.922859}
+        - {x: 8.542847, y: -0.07714081}
+        - {x: 74.54285, y: -0.07714081}
+    - name: Golem_5
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 0
+        width: 226
+        height: 299
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82.531494, y: 218.84857}
+        - {x: -82.531494, y: 35.84857}
+        - {x: -64.531494, y: 2.8485718}
+        - {x: -4.531494, y: 3.8485718}
+        - {x: -2.5314941, y: 5.848572}
+        - {x: 0.46850586, y: 11.848572}
+        - {x: -0.53149414, y: 10.848572}
+        - {x: -0.53149414, y: 2.8485718}
+        - {x: 2.4685059, y: -0.15142822}
+        - {x: 77.468506, y: -0.15142822}
+        - {x: 83.468506, y: 24.848572}
+        - {x: 83.468506, y: 216.84857}
+        - {x: 82.468506, y: 218.84857}
+    - name: Golem_6
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 0
+        width: 230
+        height: 307
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76.89429, y: 224.77429}
+        - {x: -35.105713, y: 224.77429}
+        - {x: -53.105713, y: 222.77429}
+        - {x: -76.10571, y: 194.77429}
+        - {x: -84.10571, y: 169.77429}
+        - {x: -84.10571, y: 73.774284}
+        - {x: -61.105713, y: 5.7742844}
+        - {x: -47.105713, y: -0.22571564}
+        - {x: 39.894287, y: -0.22571564}
+        - {x: 46.894287, y: 0.77428436}
+        - {x: 66.89429, y: 78.774284}
+        - {x: 84.89429, y: 157.77429}
+        - {x: 84.89429, y: 210.77429}
+    - name: Golem_7
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 0
+        width: 226
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 80.39429, y: 231.5657}
+        - {x: -50.605713, y: 231.5657}
+        - {x: -74.60571, y: 214.5657}
+        - {x: -82.60571, y: 180.5657}
+        - {x: -82.60571, y: 104.56571}
+        - {x: -55.605713, y: 64.56571}
+        - {x: -39.605713, y: -0.43428802}
+        - {x: 25.394287, y: -0.43428802}
+        - {x: 32.394287, y: 0.565712}
+        - {x: 79.39429, y: 113.56571}
+        - {x: 83.39429, y: 138.5657}
+        - {x: 83.39429, y: 229.5657}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
