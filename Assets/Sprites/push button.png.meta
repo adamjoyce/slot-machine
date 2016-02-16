@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: dcfa333927131f743b36c8bdc7f60b90
-timeCreated: 1455626045
+timeCreated: 1455628363
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: push button_0
+    21300002: push button_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +40,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +51,53 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: push button_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97, y: 45}
+        - {x: 81, y: 73}
+        - {x: 46, y: 100}
+        - {x: -37, y: 100}
+        - {x: -67, y: 89}
+        - {x: -100, y: 48}
+        - {x: -100, y: -53}
+        - {x: -55, y: -100}
+        - {x: 52, y: -100}
+        - {x: 71, y: -91}
+        - {x: 100, y: -39}
+        - {x: 100, y: 30}
+    - name: push button_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97, y: 45}
+        - {x: 81, y: 73}
+        - {x: 46, y: 100}
+        - {x: -37, y: 100}
+        - {x: -67, y: 89}
+        - {x: -100, y: 48}
+        - {x: -100, y: -53}
+        - {x: -55, y: -100}
+        - {x: 52, y: -100}
+        - {x: 71, y: -91}
+        - {x: 100, y: -39}
+        - {x: 100, y: 30}
     outline: []
   spritePackingTag: 
   userData: 

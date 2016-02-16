@@ -3,6 +3,10 @@ using System.Collections;
 
 public class SlotMachine : MonoBehaviour {
 
+  public GameObject leverButton;
+  public Sprite buttonNotPressed;
+  public Sprite buttonPressed;
+
   private static readonly string[] levels = { "Fire", "Water", "Plat" };
   private static readonly string[] weapons = { "Knife", "Gun", "Rocket" };
   private static readonly string[] enemies = { "Charger", "Spitter", "Flyer" };
@@ -25,6 +29,8 @@ public class SlotMachine : MonoBehaviour {
 
   private bool animateSlot0 = true;
   private bool animateSlot1 = true;
+
+  private bool slotsSpinning = false;
 
   // Initilisation / assignment.
   private void Start() {
@@ -74,12 +80,12 @@ public class SlotMachine : MonoBehaviour {
   // Update is called once per frame.
   private void Update() {
     // Detect when the lever is pulled.
-    if (Input.GetMouseButtonDown(0)) {
+    if (Input.GetMouseButtonDown(0) && !slotsSpinning) {
       RaycastHit hit;
       if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
         if (hit.collider.tag == "Lever") {
           // Lever animation...
-          Debug.Log("Lever Animation");
+          hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = buttonPressed;
 
           // Reset state variables.
           slotsTimer = 0.0f;
@@ -101,6 +107,7 @@ public class SlotMachine : MonoBehaviour {
 
           // Allows the slots animation to play.
           slotsAnimation = true;
+          slotsSpinning = true;
         }
       }
     }
@@ -113,6 +120,7 @@ public class SlotMachine : MonoBehaviour {
         slotsAnimation = false;
         // Detect results and load level.
         string[] results = getSlotResults();
+        leverButton.GetComponent<SpriteRenderer>().sprite = buttonNotPressed;
         StartCoroutine(WaitAndLoad(3, "_Scenes/" + "Level " + results[0]));
       } else if (slotsTimer >= stopTime1) {
         animateSlot0 = false;
