@@ -10,6 +10,11 @@ public class LevelGenerator : MonoBehaviour {
   public GameObject spitterPrefab;
   public GameObject flyerPrefab;
 
+  public GameObject floor;
+  public GameObject leftWall;
+  public GameObject rightWall;
+  public GameObject ceiling;
+
   // Note some may be culled.
   public int estimatePlatformNumber;
   public float maxPlatformHeight;
@@ -72,6 +77,7 @@ public class LevelGenerator : MonoBehaviour {
     Debug.Log("Asleep");
 
     CullPlatformElements();
+    enableBoundaries();
     spawnPlayer();
     spawnEnemies("Flyer");
   }
@@ -96,6 +102,14 @@ public class LevelGenerator : MonoBehaviour {
     }
     Debug.Log("Fixed");
     platforms = plats;
+  }
+
+  //
+  private void enableBoundaries() {
+    floor.SetActive(true);
+    leftWall.SetActive(true);
+    rightWall.SetActive(true);
+    ceiling.SetActive(true);
   }
 
   // Spawn the player on a platform.
