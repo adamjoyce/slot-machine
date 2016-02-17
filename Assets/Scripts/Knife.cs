@@ -20,7 +20,7 @@ public class Knife : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collide)
     {
-        if((collide.name == "Enemy" || collide.name == "Enemy(Clone)") && !enemiesHit.Contains(collide.gameObject))
+        if(collide.tag == "Enemy" && !enemiesHit.Contains(collide.gameObject))
         {
             Debug.Log("Inflict Damage");
             collide.gameObject.GetComponent<Enemy>().inflictDamage(knifeDamage);

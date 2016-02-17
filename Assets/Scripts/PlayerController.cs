@@ -47,18 +47,23 @@ public class PlayerController : MonoBehaviour
         if (nextBullet > 0)
             nextBullet -= Time.deltaTime;
 
-        if(this.jumpStatus != JumpStatus.GROUND)
+        if (this.HP > 0)
         {
-            GetComponent<Animator>().Play("Jump");
-        }
-        else if(Input.GetAxis("Horizontal") != 0)
-        {
-            GetComponent<Animator>().Play("Run");
+            if (this.jumpStatus != JumpStatus.GROUND)
+            {
+                GetComponent<Animator>().Play("Jump");
+            }
+            else if (Input.GetAxis("Horizontal") != 0)
+            {
+                GetComponent<Animator>().Play("Run");
+            }
+            else
+            {
+                GetComponent<Animator>().Play("Idle");
+            }
         }
         else
-        {
-            GetComponent<Animator>().Play("Idle");
-        }
+            return;
 
         bool keyDown = (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W));
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && wallColl != null)
@@ -203,7 +208,15 @@ public class PlayerController : MonoBehaviour
         direction.Normalize();
         rb.AddForce(direction * maxSpeed, ForceMode2D.Impulse);
         if (HP <= 0)
-            Destroy(this.gameObject);
+            StartCoroutine(KillPlayer());
+    }
+
+
+    IEnumerator KillPlayer()
+    {
+        GetComponent<Animator>().Play("Death");
+        yield return new WaitForSeconds(3.2f);
+        Destroy(this.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

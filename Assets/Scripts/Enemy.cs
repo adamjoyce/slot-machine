@@ -43,10 +43,16 @@ public class Enemy : MonoBehaviour {
     {
         HP -= damage;
         if (HP <= 0)
-            Destroy(this.gameObject);
+            StartCoroutine(KillEnemy());
         return damage;
     }
 
+    IEnumerator KillEnemy()
+    {
+        GetComponent<Animator>().Play("Death");
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
