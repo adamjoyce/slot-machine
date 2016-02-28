@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
+
+            if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
         {
             if (nextFireball > 0)
                 nextFireball -= Time.deltaTime;

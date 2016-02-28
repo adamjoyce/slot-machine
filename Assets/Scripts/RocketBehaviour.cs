@@ -22,7 +22,7 @@ public class RocketBehaviour : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collide)
     {
-        if (collide.tag == "Enemy") return;
+        if (collide.tag == "Player") return;
        
         this.transform.Find("RocketAOE").GetComponent<CircleCollider2D>().enabled = true;
         Destroy(this.GetComponent<Rigidbody2D>());
