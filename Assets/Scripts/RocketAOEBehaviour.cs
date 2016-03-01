@@ -16,7 +16,7 @@ public class RocketAOEBehaviour : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collide)
     {
         Debug.Log("Explo -> " + collide.name);
-        if(collide.name == "Enemy" || collide.name == "Enemy(Clone)")
+        if(collide.tag == "Enemy")
         {
             collide.gameObject.GetComponent<Enemy>().inflictDamage(this.transform.parent.GetComponent<RocketBehaviour>().RocketDamage);
         }

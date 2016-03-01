@@ -1,0 +1,879 @@
+fileFormatVersion: 2
+guid: da53c7da007fded4690d3fc8f6b85750
+timeCreated: 1456700523
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: player death anim (3)_0
+    21300002: player death anim (3)_1
+    21300004: player death anim (3)_2
+    21300006: player death anim (3)_3
+    21300008: player death anim (3)_4
+    21300010: player death anim (3)_5
+    21300012: player death anim (3)_6
+    21300014: player death anim (3)_7
+    21300016: player death anim (3)_8
+    21300018: player death anim (3)_9
+    21300020: player death anim (3)_10
+    21300022: player death anim (3)_11
+    21300024: player death anim (3)_12
+    21300026: player death anim (3)_13
+    21300028: player death anim (3)_14
+    21300030: player death anim (3)_15
+    21300032: player death anim (3)_16
+    21300034: player death anim (3)_17
+    21300036: player death anim (3)_18
+    21300038: player death anim (3)_19
+    21300040: player death anim (3)_20
+    21300042: player death anim (3)_21
+    21300044: player death anim (3)_22
+    21300046: player death anim (3)_23
+    21300048: player death anim (3)_24
+    21300050: player death anim (3)_25
+    21300052: player death anim (3)_26
+    21300054: player death anim (3)_27
+    21300056: player death anim (3)_28
+    21300058: player death anim (3)_29
+    21300060: player death anim (3)_30
+    21300062: player death anim (3)_31
+    21300064: player death anim (3)_32
+    21300066: player death anim (3)_33
+    21300068: player death anim (3)_34
+    21300070: player death anim (3)_35
+    21300072: player death anim (3)_36
+    21300074: player death anim (3)_37
+    21300076: player death anim (3)_38
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: player death anim (3)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 49.75641}
+        - {x: -23.5, y: 31.75641}
+        - {x: -23.5, y: -0.2435894}
+        - {x: 11.5, y: -0.2435894}
+        - {x: 11.5, y: 36.75641}
+        - {x: 10.5, y: 44.75641}
+        - {x: 2.5, y: 49.75641}
+    - name: player death anim (3)_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.512821, y: 36.75641}
+        - {x: 5.512821, y: 49.75641}
+        - {x: -7.487179, y: 49.75641}
+        - {x: -21.487179, y: 30.75641}
+        - {x: -23.487179, y: 10.756411}
+        - {x: -23.487179, y: -0.2435894}
+        - {x: -7.487179, y: -0.2435894}
+        - {x: -7.487179, y: 1.7564106}
+        - {x: -6.487179, y: -0.2435894}
+        - {x: 12.512821, y: -0.2435894}
+    - name: player death anim (3)_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.5256424, y: 49.75641}
+        - {x: -19.474358, y: 49.75641}
+        - {x: -23.474358, y: 34.75641}
+        - {x: -23.474358, y: -0.2435894}
+        - {x: 11.525642, y: -0.2435894}
+        - {x: 11.525642, y: 37.75641}
+        - {x: 8.525642, y: 43.75641}
+    - name: player death anim (3)_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.538467, y: 30.75641}
+        - {x: 5.5384674, y: 49.75641}
+        - {x: -7.4615326, y: 49.75641}
+        - {x: -21.461533, y: 30.75641}
+        - {x: -23.461533, y: 11.756411}
+        - {x: -23.461533, y: -0.2435894}
+        - {x: 12.538467, y: -0.2435894}
+        - {x: 12.538467, y: 2.7564106}
+        - {x: 16.538467, y: 16.75641}
+      - - {x: 13.538467, y: 19.75641}
+        - {x: 16.538467, y: 20.75641}
+        - {x: 16.538467, y: 23.75641}
+        - {x: 13.538467, y: 24.75641}
+        - {x: 11.538467, y: 22.75641}
+    - name: player death anim (3)_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.551285, y: 48.75641}
+        - {x: 3.5512848, y: 49.75641}
+        - {x: -8.448715, y: 49.75641}
+        - {x: -22.448715, y: 30.75641}
+        - {x: -23.448715, y: 15.756411}
+        - {x: -23.448715, y: -0.2435894}
+        - {x: 13.551285, y: -0.2435894}
+        - {x: 15.551285, y: 8.756411}
+        - {x: 15.551285, y: 28.75641}
+    - name: player death anim (3)_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.4358826, y: 49.75641}
+        - {x: -22.435883, y: 30.75641}
+        - {x: -23.435883, y: 11.756411}
+        - {x: -23.435883, y: -0.2435894}
+        - {x: 15.564117, y: -0.2435894}
+        - {x: 15.564117, y: 45.75641}
+        - {x: 7.5641174, y: 49.75641}
+      - - {x: 13.564117, y: 19.75641}
+        - {x: 16.564117, y: 20.75641}
+        - {x: 16.564117, y: 23.75641}
+        - {x: 13.564117, y: 24.75641}
+        - {x: 11.564117, y: 22.75641}
+      - - {x: 12.564117, y: 24.75641}
+        - {x: 15.564117, y: 25.75641}
+        - {x: 15.564117, y: 28.75641}
+        - {x: 12.564117, y: 29.75641}
+        - {x: 10.564117, y: 27.75641}
+    - name: player death anim (3)_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.423065, y: 49.75641}
+        - {x: -23.423065, y: 32.75641}
+        - {x: -23.423065, y: -0.2435894}
+        - {x: 15.576935, y: -0.2435894}
+        - {x: 15.576935, y: 30.75641}
+        - {x: 6.576935, y: 49.75641}
+    - name: player death anim (3)_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.410248, y: 49.75641}
+        - {x: -22.410248, y: 30.75641}
+        - {x: -23.410248, y: 3.7564106}
+        - {x: -23.410248, y: -0.2435894}
+        - {x: 13.589752, y: -0.2435894}
+        - {x: 13.589752, y: 46.75641}
+        - {x: 8.589752, y: 49.75641}
+    - name: player death anim (3)_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.3974304, y: 49.75641}
+        - {x: -23.39743, y: 32.75641}
+        - {x: -23.39743, y: -0.2435894}
+        - {x: 11.60257, y: -0.2435894}
+        - {x: 11.60257, y: 34.75641}
+        - {x: 5.6025696, y: 49.75641}
+    - name: player death anim (3)_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.384613, y: 49.75641}
+        - {x: -23.384613, y: 29.75641}
+        - {x: -23.384613, y: -0.2435894}
+        - {x: 12.615387, y: -0.2435894}
+        - {x: 12.615387, y: 37.75641}
+        - {x: 7.615387, y: 49.75641}
+    - name: player death anim (3)_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.371765, y: 49.75641}
+        - {x: -23.371765, y: 32.75641}
+        - {x: -23.371765, y: -0.2435894}
+        - {x: 13.628235, y: -0.2435894}
+        - {x: 15.628235, y: 0.7564106}
+        - {x: 15.628235, y: 33.75641}
+        - {x: 4.628235, y: 49.75641}
+      - - {x: 13.628235, y: 19.75641}
+        - {x: 16.628235, y: 20.75641}
+        - {x: 16.628235, y: 23.75641}
+        - {x: 13.628235, y: 24.75641}
+        - {x: 11.628235, y: 22.75641}
+    - name: player death anim (3)_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.3589478, y: 49.75641}
+        - {x: -10.358948, y: 47.75641}
+        - {x: -21.358948, y: 30.75641}
+        - {x: -23.358948, y: 16.75641}
+        - {x: -23.358948, y: -0.2435894}
+        - {x: 14.641052, y: -0.2435894}
+        - {x: 16.641052, y: 3.7564106}
+        - {x: 16.641052, y: 39.75641}
+        - {x: 7.6410522, y: 49.75641}
+    - name: player death anim (3)_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.34613, y: 49.75641}
+        - {x: -23.34613, y: 30.75641}
+        - {x: -23.34613, y: -0.2435894}
+        - {x: 15.65387, y: -0.2435894}
+        - {x: 15.65387, y: 49.75641}
+      - - {x: 13.65387, y: 19.75641}
+        - {x: 16.65387, y: 20.75641}
+        - {x: 16.65387, y: 23.75641}
+        - {x: 13.65387, y: 24.75641}
+        - {x: 11.65387, y: 22.75641}
+    - name: player death anim (3)_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.333313, y: 14.756411}
+        - {x: -23.333313, y: -0.2435894}
+        - {x: 15.666687, y: -0.2435894}
+        - {x: 15.666687, y: 35.75641}
+        - {x: 13.666687, y: 49.75641}
+        - {x: -8.333313, y: 49.75641}
+        - {x: -22.333313, y: 30.75641}
+    - name: player death anim (3)_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.320496, y: 49.75641}
+        - {x: -23.320496, y: 34.75641}
+        - {x: -23.320496, y: -0.2435894}
+        - {x: 15.679504, y: -0.2435894}
+        - {x: 15.679504, y: 49.75641}
+    - name: player death anim (3)_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.307678, y: 49.75641}
+        - {x: -22.307678, y: 30.75641}
+        - {x: -23.307678, y: 9.756411}
+        - {x: -23.307678, y: -0.2435894}
+        - {x: 15.692322, y: -0.2435894}
+        - {x: 15.692322, y: 21.75641}
+        - {x: 9.692322, y: 49.75641}
+    - name: player death anim (3)_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.294861, y: 49.75641}
+        - {x: -14.294861, y: 45.75641}
+        - {x: -23.29486, y: 30.75641}
+        - {x: -23.29486, y: -0.2435894}
+        - {x: 12.705139, y: -0.2435894}
+        - {x: 12.705139, y: 46.75641}
+        - {x: 9.705139, y: 49.75641}
+    - name: player death anim (3)_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.282043, y: 49.75641}
+        - {x: -22.282043, y: 30.75641}
+        - {x: -23.282043, y: 3.7564106}
+        - {x: -23.282043, y: -0.2435894}
+        - {x: 12.717957, y: -0.2435894}
+        - {x: 12.717957, y: 37.75641}
+        - {x: 7.7179565, y: 49.75641}
+    - name: player death anim (3)_18
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.269226, y: 49.75641}
+        - {x: -23.269226, y: 31.75641}
+        - {x: -23.269226, y: -0.2435894}
+        - {x: 12.730774, y: -0.2435894}
+        - {x: 12.730774, y: 45.75641}
+        - {x: 7.730774, y: 49.75641}
+    - name: player death anim (3)_19
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.256409, y: 49.75641}
+        - {x: -22.256409, y: 30.75641}
+        - {x: -23.256409, y: 13.756411}
+        - {x: -23.256409, y: -0.2435894}
+        - {x: 12.743591, y: -0.2435894}
+        - {x: 12.743591, y: 37.75641}
+        - {x: 7.7435913, y: 49.75641}
+    - name: player death anim (3)_20
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.24353, y: 49.75641}
+        - {x: -23.24353, y: 31.75641}
+        - {x: -23.24353, y: -0.2435894}
+        - {x: 12.75647, y: -0.2435894}
+        - {x: 12.75647, y: 44.75641}
+        - {x: 7.7564697, y: 49.75641}
+    - name: player death anim (3)_21
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.769287, y: 48.75641}
+        - {x: 3.769287, y: 49.75641}
+        - {x: -10.230713, y: 49.75641}
+        - {x: -17.230713, y: 47.75641}
+        - {x: -23.230713, y: 20.75641}
+        - {x: -23.230713, y: -0.2435894}
+        - {x: 12.769287, y: -0.2435894}
+        - {x: 12.769287, y: 17.75641}
+    - name: player death anim (3)_22
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.2178955, y: 49.75641}
+        - {x: -23.217896, y: 31.75641}
+        - {x: -23.217896, y: -0.2435894}
+        - {x: 12.7821045, y: -0.2435894}
+        - {x: 12.7821045, y: 44.75641}
+        - {x: 7.7821045, y: 49.75641}
+    - name: player death anim (3)_23
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.794922, y: 48.75641}
+        - {x: 3.7949219, y: 49.75641}
+        - {x: -6.205078, y: 49.75641}
+        - {x: -22.205078, y: 30.75641}
+        - {x: -22.205078, y: -0.2435894}
+        - {x: 12.794922, y: -0.2435894}
+        - {x: 12.794922, y: 17.75641}
+    - name: player death anim (3)_24
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.192261, y: 49.75641}
+        - {x: -23.19226, y: 30.75641}
+        - {x: -23.19226, y: -0.2435894}
+        - {x: 12.807739, y: -0.2435894}
+        - {x: 12.807739, y: 47.75641}
+        - {x: 4.8077393, y: 49.75641}
+    - name: player death anim (3)_25
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.820557, y: 48.75641}
+        - {x: 3.8205566, y: 49.75641}
+        - {x: -6.1794434, y: 49.75641}
+        - {x: -22.179443, y: 30.75641}
+        - {x: -22.179443, y: -0.2435894}
+        - {x: 12.820557, y: -0.2435894}
+        - {x: 12.820557, y: 17.75641}
+    - name: player death anim (3)_26
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.166626, y: 49.75641}
+        - {x: -23.166626, y: 30.75641}
+        - {x: -23.166626, y: -0.2435894}
+        - {x: 12.833374, y: -0.2435894}
+        - {x: 12.833374, y: 47.75641}
+        - {x: 4.833374, y: 49.75641}
+    - name: player death anim (3)_27
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.1538086, y: 49.75641}
+        - {x: -22.153809, y: 32.75641}
+        - {x: -22.153809, y: -0.2435894}
+        - {x: 12.846191, y: -0.2435894}
+        - {x: 12.846191, y: 37.75641}
+        - {x: 6.8461914, y: 49.75641}
+    - name: player death anim (3)_28
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.140991, y: 49.75641}
+        - {x: -23.140991, y: 30.75641}
+        - {x: -23.140991, y: -0.2435894}
+        - {x: 12.859009, y: -0.2435894}
+        - {x: 12.859009, y: 47.75641}
+        - {x: 4.859009, y: 49.75641}
+    - name: player death anim (3)_29
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.1281738, y: 49.75641}
+        - {x: -13.128174, y: 44.75641}
+        - {x: -22.128174, y: 30.75641}
+        - {x: -22.128174, y: -0.2435894}
+        - {x: 12.871826, y: -0.2435894}
+        - {x: 12.871826, y: 44.75641}
+        - {x: 8.871826, y: 49.75641}
+    - name: player death anim (3)_30
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.884644, y: 47.75641}
+        - {x: 5.8846436, y: 49.75641}
+        - {x: -8.115356, y: 49.75641}
+        - {x: -23.115356, y: 30.75641}
+        - {x: -23.115356, y: -0.2435894}
+        - {x: -7.1153564, y: -0.2435894}
+        - {x: -7.1153564, y: 1.7564106}
+        - {x: -6.1153564, y: -0.2435894}
+        - {x: 12.884644, y: -0.2435894}
+    - name: player death anim (3)_31
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.102539, y: 49.75641}
+        - {x: -13.102539, y: 44.75641}
+        - {x: -22.10254, y: 30.75641}
+        - {x: -22.10254, y: -0.2435894}
+        - {x: 12.897461, y: -0.2435894}
+        - {x: 12.897461, y: 44.75641}
+        - {x: 8.897461, y: 49.75641}
+    - name: player death anim (3)_32
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.910278, y: 46.75641}
+        - {x: 3.9102783, y: 49.75641}
+        - {x: -8.089722, y: 49.75641}
+        - {x: -23.089722, y: 30.75641}
+        - {x: -23.089722, y: -0.2435894}
+        - {x: -7.0897217, y: -0.2435894}
+        - {x: -7.0897217, y: 1.7564106}
+        - {x: -6.0897217, y: -0.2435894}
+        - {x: 12.910278, y: -0.2435894}
+    - name: player death anim (3)_33
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.0769043, y: 49.75641}
+        - {x: -22.076904, y: 41.75641}
+        - {x: -22.076904, y: -0.2435894}
+        - {x: 15.923096, y: -0.2435894}
+        - {x: 15.923096, y: 35.75641}
+        - {x: 7.9230957, y: 49.75641}
+      - - {x: 21.923096, y: 30.75641}
+        - {x: 24.923096, y: 31.75641}
+        - {x: 24.923096, y: 34.75641}
+        - {x: 21.923096, y: 35.75641}
+        - {x: 19.923096, y: 33.75641}
+    - name: player death anim (3)_34
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.935913, y: 50.75641}
+        - {x: -26.064087, y: 50.75641}
+        - {x: -26.064087, y: 3.7564106}
+        - {x: -24.064087, y: -0.2435894}
+        - {x: 16.935913, y: -0.2435894}
+        - {x: 23.935913, y: 25.75641}
+        - {x: 23.935913, y: 36.75641}
+      - - {x: 22.935913, y: -0.2435894}
+        - {x: 22.935913, y: 1.7564106}
+        - {x: 19.935913, y: 2.7564106}
+        - {x: 17.935913, y: -0.2435894}
+    - name: player death anim (3)_35
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.94873, y: 32.75641}
+        - {x: 22.94873, y: 34.75641}
+        - {x: 25.94873, y: 34.75641}
+        - {x: 27.94873, y: 36.75641}
+        - {x: 27.94873, y: 40.75641}
+        - {x: 14.94873, y: 52.75641}
+        - {x: 0.94873047, y: 46.75641}
+        - {x: -4.0512695, y: 42.75641}
+        - {x: -10.05127, y: 36.75641}
+        - {x: -7.0512695, y: 40.75641}
+        - {x: -6.0512695, y: 45.75641}
+        - {x: -8.05127, y: 47.75641}
+        - {x: -11.05127, y: 46.75641}
+        - {x: -11.05127, y: 48.75641}
+        - {x: -12.05127, y: 52.75641}
+        - {x: -24.05127, y: 52.75641}
+        - {x: -26.05127, y: 48.75641}
+        - {x: -26.05127, y: 10.756411}
+        - {x: -23.05127, y: -0.2435894}
+        - {x: 19.94873, y: -0.2435894}
+        - {x: 27.94873, y: 6.7564106}
+        - {x: 27.94873, y: 34.75641}
+        - {x: 25.94873, y: 34.75641}
+      - - {x: 23.94873, y: -0.2435894}
+        - {x: 23.94873, y: 1.7564106}
+        - {x: 20.94873, y: 2.7564106}
+        - {x: 18.94873, y: -0.2435894}
+    - name: player death anim (3)_36
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.038452, y: 38.75641}
+        - {x: -26.038452, y: 27.75641}
+        - {x: -25.038452, y: 27.75641}
+        - {x: -23.038452, y: 25.75641}
+        - {x: -23.038452, y: 23.75641}
+        - {x: -25.038452, y: 26.75641}
+        - {x: -26.038452, y: 26.75641}
+        - {x: -26.038452, y: -0.2435894}
+        - {x: 26.961548, y: -0.2435894}
+        - {x: 26.961548, y: 38.75641}
+      - - {x: 12.961548, y: 36.75641}
+        - {x: 15.961548, y: 37.75641}
+        - {x: 15.961548, y: 40.75641}
+        - {x: 12.961548, y: 41.75641}
+        - {x: 10.961548, y: 39.75641}
+    - name: player death anim (3)_37
+      rect:
+        serializedVersion: 2
+        x: 4736
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.025635, y: 20.75641}
+        - {x: -13.025635, y: 12.756411}
+        - {x: -10.025635, y: 11.756411}
+        - {x: -14.025635, y: 8.756411}
+        - {x: -13.025635, y: 8.756411}
+        - {x: -13.025635, y: 11.756411}
+        - {x: -16.025635, y: 14.756411}
+        - {x: -25.025635, y: 12.756411}
+        - {x: -26.025635, y: 8.756411}
+        - {x: -26.025635, y: -0.2435894}
+        - {x: 27.974365, y: -0.2435894}
+        - {x: 27.974365, y: 14.756411}
+        - {x: 7.974365, y: 20.75641}
+      - - {x: -18.025635, y: 17.75641}
+        - {x: -15.025635, y: 18.75641}
+        - {x: -15.025635, y: 21.75641}
+        - {x: -18.025635, y: 22.75641}
+        - {x: -20.025635, y: 20.75641}
+      - - {x: -26.025635, y: 18.75641}
+        - {x: -23.025635, y: 19.75641}
+        - {x: -23.025635, y: 24.75641}
+        - {x: -25.025635, y: 26.75641}
+        - {x: -26.025635, y: 26.75641}
+      - - {x: -3.0256348, y: 20.75641}
+        - {x: -0.025634766, y: 21.75641}
+        - {x: -0.025634766, y: 24.75641}
+        - {x: -3.0256348, y: 25.75641}
+        - {x: -5.025635, y: 23.75641}
+    - name: player death anim (3)_38
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.012817, y: 13.756411}
+        - {x: -26.012817, y: 6.7564106}
+        - {x: -26.012817, y: -0.2435894}
+        - {x: 26.987183, y: -0.2435894}
+        - {x: 26.987183, y: 8.756411}
+        - {x: 20.987183, y: 13.756411}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

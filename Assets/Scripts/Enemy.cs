@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
+
+            if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
         {
             if (nextFireball > 0)
                 nextFireball -= Time.deltaTime;
@@ -43,10 +44,16 @@ public class Enemy : MonoBehaviour {
     {
         HP -= damage;
         if (HP <= 0)
-            Destroy(this.gameObject);
+            StartCoroutine(KillEnemy());
         return damage;
     }
 
+    IEnumerator KillEnemy()
+    {
+        GetComponent<Animator>().Play("Death");
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {

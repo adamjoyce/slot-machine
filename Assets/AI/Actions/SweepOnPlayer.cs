@@ -29,11 +29,15 @@ public class SweepOnPlayer : RAINAction
         }
         else if((ai.Body.transform.position - ai.WorkingMemory.GetItem<Vector3>("PlayerPosition")).magnitude < 0.1f)
         {
-            ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(99,99,99));
+                ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(99,99,99));
             return ActionResult.SUCCESS;
         }
 
         Vector3 direction = (ai.WorkingMemory.GetItem<Vector3>("PlayerPosition") - ai.Body.transform.position);
+        if (direction.x > 0 && ai.Body.transform.localScale.x < 0 || direction.x < 0 && ai.Body.transform.localScale.x > 0)
+            ai.Body.transform.localScale = new Vector3(-ai.Body.transform.localScale.x, ai.Body.transform.localScale.y, ai.Body.transform.localScale.z);
+
+
         direction.Normalize();
         ai.Body.GetComponent<Rigidbody2D>().velocity = direction * 2.0f;
 
