@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour {
     public float fireballCD = 0.6f;
     float fireballVelocity = 4.0f;
 
+
     // Use this for initialization
     void Start () {
 
         nextFireball = 0;
 
 
+        transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem("forceTurn", false);
         int randDirection = Random.Range(0, 2);
         if (randDirection == 0)
             randDirection = -1;
@@ -77,6 +79,10 @@ public class Enemy : MonoBehaviour {
         if (coll.gameObject.name == "Player" || coll.gameObject.name == "Player(Clone)")
         {
             coll.gameObject.GetComponent<PlayerController>().inflictDamage(20, this.transform.position);
+        }
+        if (coll.gameObject.name == "Right Wall" || coll.gameObject.name == "Left Wall")
+        {
+            transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem("forceTurn", true);
         }
     }
 
