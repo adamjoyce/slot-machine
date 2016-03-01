@@ -20,8 +20,8 @@ public class GroundSensor : VisualSensor
         if (tAspectTransform == null)
             tAspectTransform = aAspect.Entity.Form.transform;
 
-        float sizeX = AI.Body.GetComponent<Renderer>().bounds.size.x;
-        float sizeY = AI.Body.GetComponent<Renderer>().bounds.size.y + 0.1f;
+        float sizeX = AI.Body.GetComponent<Renderer>().bounds.size.x/2;
+        float sizeY = AI.Body.GetComponent<Renderer>().bounds.size.y/2 + 0.1f;
 
         sizeX *= 1.2f;
         //sizeY *= 1.2f;
@@ -36,7 +36,10 @@ public class GroundSensor : VisualSensor
             myRaycastHit = Physics2D.Linecast(from, to);
         }
         else
-            myRaycastHit = Physics2D.Linecast(AI.Body.transform.position + new Vector3(direction * sizeX, 0.0f, 0.0f), AI.Body.transform.position + new Vector3(direction * sizeX, -sizeY, 0.0f));
+        {
+            myRaycastHit = Physics2D.Linecast(AI.Body.transform.position + new Vector3(direction * sizeX, 0.1f, 0.0f), AI.Body.transform.position + new Vector3(direction * sizeX, -sizeY, 0.0f));
+            Debug.DrawLine(AI.Body.transform.position + new Vector3(direction * sizeX, 0.0f, 0.0f), AI.Body.transform.position + new Vector3(direction * sizeX, -sizeY, 0.0f));
+        }
         // If the collider is a child (or equal to) our aspect, we're good
         if (myRaycastHit.collider != null && myRaycastHit.collider.transform.IsChildOf(tAspectTransform))
             return true;

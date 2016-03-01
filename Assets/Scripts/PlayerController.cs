@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         bool keyDown = (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W));
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && wallColl != null)
+        /*if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && wallColl != null)
         {
             float direction = GetComponent<Transform>().position.x - wallColl.GetComponent<Transform>().position.x / Mathf.Abs(GetComponent<Transform>().position.x - wallColl.GetComponent<Transform>().position.x);
             rb.velocity = new Vector3(0, jumpSpeed, 0);
@@ -75,7 +75,8 @@ public class PlayerController : MonoBehaviour
             currentKB = 0;
 
         }
-        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (jumpStatus != JumpStatus.DOUBLEJUMPING))
+        else */
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (jumpStatus != JumpStatus.DOUBLEJUMPING))
         {
             if (jumpStatus == JumpStatus.JUMPING)
                 jumpStatus = JumpStatus.DOUBLEJUMPING;
