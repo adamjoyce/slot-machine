@@ -10,10 +10,19 @@ public class Enemy : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        nextFireball = 0;
-        if (!this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.ItemExists("direction"))
-            this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem<float>("direction", -1.0f);
 
+        nextFireball = 0;
+
+
+        int randDirection = Random.Range(0, 2);
+        if (randDirection == 0)
+            randDirection = -1;
+        if (!this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.ItemExists("direction"))
+            this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem<float>("direction", randDirection);
+
+        var anim = GetComponent<Animator>();
+        AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);//could replace 0 by any other animation layer index
+        anim.Play(state.fullPathHash, -1, Random.Range(0f, 1f));
     }
 	
 	// Update is called once per frame
@@ -55,11 +64,20 @@ public class Enemy : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.name == "Player" || coll.gameObject.name == "Player(Clone)")
+        {
+            coll.gameObject.GetComponent<PlayerController>().inflictDamage(20, this.transform.position);
+        }
+
+    }
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if(coll.gameObject.name == "Player" || coll.gameObject.name == "Player(Clone)")
+        if (coll.gameObject.name == "Player" || coll.gameObject.name == "Player(Clone)")
         {
             coll.gameObject.GetComponent<PlayerController>().inflictDamage(20, this.transform.position);
         }
     }
+
 }

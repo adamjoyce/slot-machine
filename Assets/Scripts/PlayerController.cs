@@ -216,7 +216,7 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<Animator>().Play("Death");
         transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(1.6f);
         Destroy(this.gameObject);
     }
 

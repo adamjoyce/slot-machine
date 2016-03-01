@@ -41,7 +41,8 @@ public class LevelGenerator : MonoBehaviour
 
     GeneratePlatforms();
     StartCoroutine(CheckObjectsAreStill());
-  }
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Enemies"), true);
+    }
 
   private void GeneratePlatforms()
   {

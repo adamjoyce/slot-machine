@@ -85,69 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &144615433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 185972, guid: 410c93a55ef5e8c4c95ca067c31eb9ca, type: 2}
-  m_PrefabInternal: {fileID: 1957367865}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 144615434}
-  - 114: {fileID: 144615435}
-  m_Layer: 0
-  m_Name: Entity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &144615434
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 425770, guid: 410c93a55ef5e8c4c95ca067c31eb9ca, type: 2}
-  m_PrefabInternal: {fileID: 1957367865}
-  m_GameObject: {fileID: 144615433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09090909, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1358988624}
-  m_RootOrder: 0
---- !u!114 &144615435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11422476, guid: 410c93a55ef5e8c4c95ca067c31eb9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1957367865}
-  m_GameObject: {fileID: 144615433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 220721487, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dataSerializer:
-    _serializedData: <component version="1.3" type="RAIN.Entities.EntityRig"><fields><field
-      value="OnWhenSelected" type="RAIN.Core.VisualModeEnum" id="_visualMode" /><field
-      value="True" type="System.Boolean" id="_useUnityMessages" /><field type="RAIN.Entities.Entity"
-      reference="0" id="_entity" /></fields><references><reference type="RAIN.Entities.Entity"
-      refcount="1" id="0"><field value="Floor" type="System.String" id="_entityName"
-      /><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
-      id="_form" gameobject="0" /><field type="System.Collections.Generic.List" id="_aspects"
-      elementtype="RAIN.Entities.Aspects.RAINAspect"><field type="RAIN.Entities.Aspects.VisualAspect"
-      reference="1" id="element0" /></field></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
-      refcount="1" id="1"><field value="True" type="System.Boolean" id="_showVisual"
-      /><field value="GroundAspect" type="System.String" id="_aspectName" /><field
-      value="True" type="System.Boolean" id="_isActive" /><field value="0.6,0.6,0.6,1"
-      type="UnityEngine.Color" id="_aspectColor" /><field value="-0.5" type="System.Single"
-      id="_outlineColorOffset" /><field value="0.4" type="System.Single" id="_selectionColorOffset"
-      /><field value="0.1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
-      id="_mountPoint" gameobject="1" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
-      /></reference></references></component>
-    _serializedGameObjects:
-    - {fileID: 1358988622}
-    - {fileID: 1358988624}
-    _serializedCustomData: []
 --- !u!1 &192495909
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,72 +276,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}
-  m_RootGameObject: {fileID: 849317303}
   m_IsPrefabParent: 0
---- !u!1 &582331638
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 156386, guid: 60fe36d69fab76c4bb0cbbe5c871596e, type: 2}
-  m_PrefabInternal: {fileID: 1977399190}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 582331639}
-  - 114: {fileID: 582331640}
-  m_Layer: 0
-  m_Name: Entity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &582331639
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 423280, guid: 60fe36d69fab76c4bb0cbbe5c871596e, type: 2}
-  m_PrefabInternal: {fileID: 1977399190}
-  m_GameObject: {fileID: 582331638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11111111, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1939383110}
-  m_RootOrder: 0
---- !u!114 &582331640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11447126, guid: 60fe36d69fab76c4bb0cbbe5c871596e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1977399190}
-  m_GameObject: {fileID: 582331638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 220721487, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dataSerializer:
-    _serializedData: <component version="1.3" type="RAIN.Entities.EntityRig"><fields><field
-      value="OnWhenSelected" type="RAIN.Core.VisualModeEnum" id="_visualMode" /><field
-      value="True" type="System.Boolean" id="_useUnityMessages" /><field type="RAIN.Entities.Entity"
-      reference="0" id="_entity" /></fields><references><reference type="RAIN.Entities.Entity"
-      refcount="1" id="0"><field value="Right Wall" type="System.String" id="_entityName"
-      /><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
-      id="_form" gameobject="0" /><field type="System.Collections.Generic.List" id="_aspects"
-      elementtype="RAIN.Entities.Aspects.RAINAspect"><field type="RAIN.Entities.Aspects.VisualAspect"
-      reference="1" id="element0" /></field></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
-      refcount="1" id="1"><field value="True" type="System.Boolean" id="_showVisual"
-      /><field value="GroundAspect" type="System.String" id="_aspectName" /><field
-      value="True" type="System.Boolean" id="_isActive" /><field value="0.6,0,0.6,1"
-      type="UnityEngine.Color" id="_aspectColor" /><field value="-0.5" type="System.Single"
-      id="_outlineColorOffset" /><field value="0.4" type="System.Single" id="_selectionColorOffset"
-      /><field value="0.1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
-      id="_mountPoint" gameobject="1" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
-      /></reference><reference type="RAIN.Entities.Aspects.VisualAspect" refcount="0"
-      id="2" /></references></component>
-    _serializedGameObjects:
-    - {fileID: 1939383108}
-    - {fileID: 1939383110}
-    _serializedCustomData: []
 --- !u!1001 &689720663
 Prefab:
   m_ObjectHideFlags: 0
@@ -450,178 +322,11 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8639eb00a5779c4ebe472896579b0f9, type: 2}
-  m_RootGameObject: {fileID: 1506978883}
   m_IsPrefabParent: 0
---- !u!1 &849317303
+--- !u!1 &849317303 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 168380, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}
   m_PrefabInternal: {fileID: 557220806}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 849317305}
-  - 61: {fileID: 849317304}
-  m_Layer: 0
-  m_Name: Left Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &849317304
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6176582, guid: 9b86d8367aae7cc4d8ea9515148c1f66,
-    type: 2}
-  m_PrefabInternal: {fileID: 557220806}
-  m_GameObject: {fileID: 849317303}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &849317305
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400400, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}
-  m_PrefabInternal: {fileID: 557220806}
-  m_GameObject: {fileID: 849317303}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: -5.65, y: 0, z: 0}
-  m_LocalScale: {x: 9, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1136063471}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!1 &1136063470
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 130550, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}
-  m_PrefabInternal: {fileID: 557220806}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1136063471}
-  - 114: {fileID: 1136063472}
-  m_Layer: 0
-  m_Name: Entity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1136063471
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 443506, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}
-  m_PrefabInternal: {fileID: 557220806}
-  m_GameObject: {fileID: 1136063470}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11111111, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 849317305}
-  m_RootOrder: 0
---- !u!114 &1136063472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11450658, guid: 9b86d8367aae7cc4d8ea9515148c1f66,
-    type: 2}
-  m_PrefabInternal: {fileID: 557220806}
-  m_GameObject: {fileID: 1136063470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 220721487, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dataSerializer:
-    _serializedData: <component version="1.3" type="RAIN.Entities.EntityRig"><fields><field
-      value="OnWhenSelected" type="RAIN.Core.VisualModeEnum" id="_visualMode" /><field
-      value="True" type="System.Boolean" id="_useUnityMessages" /><field type="RAIN.Entities.Entity"
-      reference="0" id="_entity" /></fields><references><reference type="RAIN.Entities.Entity"
-      refcount="1" id="0"><field value="Left Wall" type="System.String" id="_entityName"
-      /><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
-      id="_form" gameobject="0" /><field type="System.Collections.Generic.List" id="_aspects"
-      elementtype="RAIN.Entities.Aspects.RAINAspect"><field type="RAIN.Entities.Aspects.VisualAspect"
-      reference="1" id="element0" /></field></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
-      refcount="1" id="1"><field value="True" type="System.Boolean" id="_showVisual"
-      /><field value="GroundAspect" type="System.String" id="_aspectName" /><field
-      value="True" type="System.Boolean" id="_isActive" /><field value="0,0,0.6,1"
-      type="UnityEngine.Color" id="_aspectColor" /><field value="-0.5" type="System.Single"
-      id="_outlineColorOffset" /><field value="0.4" type="System.Single" id="_selectionColorOffset"
-      /><field value="0.1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
-      id="_mountPoint" gameobject="1" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
-      /></reference></references></component>
-    _serializedGameObjects:
-    - {fileID: 849317303}
-    - {fileID: 849317305}
-    _serializedCustomData: []
---- !u!1 &1191565932
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 169188, guid: d8639eb00a5779c4ebe472896579b0f9, type: 2}
-  m_PrefabInternal: {fileID: 689720663}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1191565933}
-  - 114: {fileID: 1191565934}
-  m_Layer: 0
-  m_Name: Entity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1191565933
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 431964, guid: d8639eb00a5779c4ebe472896579b0f9, type: 2}
-  m_PrefabInternal: {fileID: 689720663}
-  m_GameObject: {fileID: 1191565932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09090909, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1506978885}
-  m_RootOrder: 0
---- !u!114 &1191565934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11425968, guid: d8639eb00a5779c4ebe472896579b0f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 689720663}
-  m_GameObject: {fileID: 1191565932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 220721487, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dataSerializer:
-    _serializedData: <component version="1.3" type="RAIN.Entities.EntityRig"><fields><field
-      value="OnWhenSelected" type="RAIN.Core.VisualModeEnum" id="_visualMode" /><field
-      value="True" type="System.Boolean" id="_useUnityMessages" /><field type="RAIN.Entities.Entity"
-      reference="0" id="_entity" /></fields><references><reference type="RAIN.Entities.Entity"
-      refcount="1" id="0"><field value="Ceiling" type="System.String" id="_entityName"
-      /><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
-      id="_form" gameobject="0" /><field type="System.Collections.Generic.List" id="_aspects"
-      elementtype="RAIN.Entities.Aspects.RAINAspect"><field type="RAIN.Entities.Aspects.VisualAspect"
-      reference="1" id="element0" /></field></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
-      refcount="1" id="1"><field value="True" type="System.Boolean" id="_showVisual"
-      /><field value="GroundAspect" type="System.String" id="_aspectName" /><field
-      value="True" type="System.Boolean" id="_isActive" /><field value="0,0.6,0,1"
-      type="UnityEngine.Color" id="_aspectColor" /><field value="-0.5" type="System.Single"
-      id="_outlineColorOffset" /><field value="0.4" type="System.Single" id="_selectionColorOffset"
-      /><field value="0.1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
-      id="_mountPoint" gameobject="1" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
-      /></reference></references></component>
-    _serializedGameObjects:
-    - {fileID: 1506978883}
-    - {fileID: 1506978885}
-    _serializedCustomData: []
 --- !u!1 &1298601376
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,138 +449,18 @@ MonoBehaviour:
   estimatePlatformNumber: 10
   maxPlatformHeight: 1.5
   enemyNumber: 5
---- !u!1 &1358988622
+--- !u!1 &1358988622 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 148246, guid: 410c93a55ef5e8c4c95ca067c31eb9ca, type: 2}
   m_PrefabInternal: {fileID: 1957367865}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1358988624}
-  - 61: {fileID: 1358988623}
-  m_Layer: 0
-  m_Name: Floor
-  m_TagString: Platform
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1358988623
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6159122, guid: 410c93a55ef5e8c4c95ca067c31eb9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1957367865}
-  m_GameObject: {fileID: 1358988622}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1358988624
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 469626, guid: 410c93a55ef5e8c4c95ca067c31eb9ca, type: 2}
-  m_PrefabInternal: {fileID: 1957367865}
-  m_GameObject: {fileID: 1358988622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.35, z: 0}
-  m_LocalScale: {x: 11, y: 1, z: 1}
-  m_Children:
-  - {fileID: 144615434}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
---- !u!1 &1506978883
+--- !u!1 &1506978883 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 163738, guid: d8639eb00a5779c4ebe472896579b0f9, type: 2}
   m_PrefabInternal: {fileID: 689720663}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1506978885}
-  - 61: {fileID: 1506978884}
-  m_Layer: 0
-  m_Name: Ceiling
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1506978884
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6170182, guid: d8639eb00a5779c4ebe472896579b0f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 689720663}
-  m_GameObject: {fileID: 1506978883}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1506978885
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 443068, guid: d8639eb00a5779c4ebe472896579b0f9, type: 2}
-  m_PrefabInternal: {fileID: 689720663}
-  m_GameObject: {fileID: 1506978883}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 4.35, z: 0}
-  m_LocalScale: {x: 11, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1191565933}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
---- !u!1 &1939383108
+--- !u!1 &1939383108 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 101760, guid: 60fe36d69fab76c4bb0cbbe5c871596e, type: 2}
   m_PrefabInternal: {fileID: 1977399190}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1939383110}
-  - 61: {fileID: 1939383109}
-  m_Layer: 0
-  m_Name: Right Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1939383109
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6121368, guid: 60fe36d69fab76c4bb0cbbe5c871596e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1977399190}
-  m_GameObject: {fileID: 1939383108}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1939383110
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 474336, guid: 60fe36d69fab76c4bb0cbbe5c871596e, type: 2}
-  m_PrefabInternal: {fileID: 1977399190}
-  m_GameObject: {fileID: 1939383108}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 5.65, y: 0, z: 0}
-  m_LocalScale: {x: 9, y: 1, z: 1}
-  m_Children:
-  - {fileID: 582331639}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1001 &1957367865
 Prefab:
   m_ObjectHideFlags: 0
@@ -921,7 +506,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 410c93a55ef5e8c4c95ca067c31eb9ca, type: 2}
-  m_RootGameObject: {fileID: 1358988622}
   m_IsPrefabParent: 0
 --- !u!1001 &1977399190
 Prefab:
@@ -968,5 +552,4 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60fe36d69fab76c4bb0cbbe5c871596e, type: 2}
-  m_RootGameObject: {fileID: 1939383108}
   m_IsPrefabParent: 0
