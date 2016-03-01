@@ -149,12 +149,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (currentKB >= 0)
-            currentKB += Time.deltaTime;
-        if(currentKB == -1 || currentKB > KBDuration)
-        {
-            currentKB = -1; 
-            float moveHorizontal = Input.GetAxis("Horizontal");
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
 
             if (Input.GetAxis("Horizontal") != 0)
             {
@@ -197,8 +193,10 @@ public class PlayerController : MonoBehaviour
                     knife.eulerAngles = new Vector3(0, 0, 0);
                 }
             }
-        }
 
+
+        if (HP <= 0)
+            rb.velocity = new Vector3(0, 0, 0);
     }
 
     public void inflictDamage(int dmg, Vector3 incPos)
@@ -217,6 +215,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator KillPlayer()
     {
         GetComponent<Animator>().Play("Death");
+        transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(3.2f);
         Destroy(this.gameObject);
     }
