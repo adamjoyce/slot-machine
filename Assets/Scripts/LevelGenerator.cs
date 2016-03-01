@@ -158,6 +158,27 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Spitter.
+    if (enemyType == "Spitter") {
+      int index = 0;
+      for (int i = 0; i < enemyNumber; i++) {
+        if (index == platforms.Count) {
+          index = 0;
+        }
+
+        // Do not spawn enemies on the player's starting platform.
+        if (platforms[index] == playerSpawnPlatform) {
+          // Keep the index value for the enemy the same.
+          i--;
+          index++;
+          continue;
+        }
+
+        float x = platforms[index].transform.position.x;
+        float y = platforms[index].transform.position.y;
+        Instantiate(spitterPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
+        index++;
+      }
+    }
 
     // Flyer.
     if (enemyType == "Flyer") {
