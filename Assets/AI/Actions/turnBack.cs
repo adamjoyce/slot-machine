@@ -16,7 +16,8 @@ public class turnBack : RAINAction
 
     public override ActionResult Execute(RAIN.Core.AI ai)
     {
-        if(ai.Body.name.Length >= 14 && ai.Body.name.Substring(0, 14) == "Enemy - Flying")
+        ai.WorkingMemory.SetItem("forceTurn", false);
+        if (ai.Body.name.Length >= 14 && ai.Body.name.Substring(0, 14) == "Enemy - Flying")
             ai.WorkingMemory.SetItem<Vector3>("startPoint", ai.Body.transform.position);
         if (ai.WorkingMemory.GetItem<float>("direction") == 1.0f)
         {

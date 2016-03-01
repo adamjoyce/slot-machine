@@ -30,16 +30,16 @@ MonoBehaviour:
       constraint=&quot;playerFound == null&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
       repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;If Ground Found&quot;
-      debugbreak=&quot;False&quot; constraint=&quot;groundFound != null&quot;&gt;&lt;action
-      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
-      namespace=&quot;(global)&quot; name=&quot;Move Forward&quot; debugbreak=&quot;False&quot;
-      classname=&quot;moveForward&quot; /&gt;&lt;/constraint&gt;&lt;sequencer usepriorities=&quot;False&quot;
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;sequencer&quot; debugbreak=&quot;False&quot;&gt;&lt;action
-      repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot;
-      parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;Turn Back&quot;
-      debugbreak=&quot;False&quot; classname=&quot;turnBack&quot; /&gt;&lt;timer waitforsec=&quot;1&quot;
-      returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot;
-      debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;move
+      debugbreak=&quot;False&quot; constraint=&quot;groundFound != null &amp;amp;&amp;amp;
+      !forceTurn&quot;&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot;
+      parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;Move Forward&quot;
+      debugbreak=&quot;False&quot; classname=&quot;moveForward&quot; /&gt;&lt;/constraint&gt;&lt;sequencer
+      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;sequencer&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+      priority=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
+      name=&quot;Turn Back&quot; debugbreak=&quot;False&quot; classname=&quot;turnBack&quot;
+      /&gt;&lt;timer waitforsec=&quot;0&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
+      name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;move
       turnspeed=&quot;0&quot; repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;chase
       player&quot; movetarget=&quot;playerFound&quot; movespeed=&quot;4&quot; facetarget=&quot;&quot;
       debugbreak=&quot;False&quot; closeenoughdistance=&quot;0&quot; closeenoughangle=&quot;&quot;
