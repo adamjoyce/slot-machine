@@ -83,7 +83,7 @@ public class LevelGenerator : MonoBehaviour
     CullPlatformElements();
     enableBoundaries();
     spawnPlayer();
-    spawnEnemies(PlayerPrefs.GetString("Enemy"));
+        spawnEnemies("Charger");//PlayerPrefs.GetString("Enemy"));
   }
 
   private void CullPlatformElements()
