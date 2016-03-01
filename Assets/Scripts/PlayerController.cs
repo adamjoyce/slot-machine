@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpSpeed;
     private bool facingRight;
-    public string weaponName = "Knife";
+    public string weaponName;
     public float bulletCD = 1.0f;
     public float rocketLauncherCD = 2.0f;
     private float nextBullet;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         facingRight = true;
         nextBullet = 0;
         usingKnife = false;
+        weaponName = PlayerPrefs.GetString("Weapon");
 
 
 
