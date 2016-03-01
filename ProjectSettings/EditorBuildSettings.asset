@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Slot Machine.unity
   - enabled: 1
-    path: Assets/_Scenes/Level Fire.unity
+    path: Assets/_Scenes/Level Lava.unity
   - enabled: 1
     path: Assets/_Scenes/Level Water.unity
   - enabled: 1
-    path: Assets/_Scenes/Level Plat.unity
+    path: Assets/_Scenes/Level Earth.unity
   - enabled: 1
     path: Assets/_Scenes/Level Gen.unity

@@ -7,8 +7,8 @@ public class SlotMachine : MonoBehaviour {
   public Sprite buttonNotPressed;
   public Sprite buttonPressed;
 
-  private static readonly string[] levels = { "Fire", "Water", "Plat" };
-  private static readonly string[] weapons = { "Knife", "Gun", "Rocket" };
+  private static readonly string[] levels = { "Lava", "Water", "Earth" };
+  private static readonly string[] weapons = { "Knife", "Gun", "RocketLauncher" };
   private static readonly string[] enemies = { "Charger", "Spitter", "Flyer" };
 
   private GameObject[] levelObjects;
