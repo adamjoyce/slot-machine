@@ -19,6 +19,8 @@ public class turnBack : RAINAction
         ai.WorkingMemory.SetItem("forceTurn", false);
         if (ai.Body.name.Length >= 14 && ai.Body.name.Substring(0, 14) == "Enemy - Flying")
             ai.WorkingMemory.SetItem<Vector3>("startPoint", ai.Body.transform.position);
+        if (ai.Body.name.Length >= 15 && ai.Body.name.Substring(0, 15) == "Enemy - Charger")
+            ai.Senses.Sensors[1].AngleOffset = new Vector3(ai.Senses.Sensors[1].AngleOffset.x, -ai.Senses.Sensors[1].AngleOffset.y, ai.Senses.Sensors[1].AngleOffset.z);
         if (ai.WorkingMemory.GetItem<float>("direction") == 1.0f)
         {
             ai.WorkingMemory.SetItem<float>("direction", -1.0f);

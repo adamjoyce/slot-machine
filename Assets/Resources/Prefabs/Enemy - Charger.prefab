@@ -250,19 +250,19 @@ MonoBehaviour:
       /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="-5"
       type="UnityEngine.LayerMask" id="_lineOfSightMask" /><field value="-1" type="UnityEngine.LayerMask"
       id="_physicsMask" /></reference><reference type="RaySensor" refcount="1" id="8"><field
-      value="False" type="System.Boolean" id="_showVisual" /><field value="Enemy Sensor"
+      value="True" type="System.Boolean" id="_showVisual" /><field value="Enemy Sensor"
       type="System.String" id="_sensorName" /><field value="True" type="System.Boolean"
       id="_isActive" /><field value="0.6,0,0.6,1" type="UnityEngine.Color" id="_sensorColor"
       /><field type="UnityEngine.Transform" id="_mountPoint" gameobject="3" /><field
-      value="0,0,0" type="UnityEngine.Vector3" id="_positionOffset" /><field value="0,0,0"
+      value="0,2,0" type="UnityEngine.Vector3" id="_positionOffset" /><field value="0,90,0"
       type="UnityEngine.Vector3" id="_angleOffset" /><field type="System.Collections.Generic.List"
       id="_filters" elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter"
-      /><field value="0.0001" type="System.Single" id="_range" /><field value="False"
-      type="System.Boolean" id="_canDetectSelf" /><field value="360" type="System.Single"
-      id="_horizontalAngle" /><field value="180" type="System.Single" id="_verticalAngle"
-      /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="-5"
-      type="UnityEngine.LayerMask" id="_lineOfSightMask" /><field value="-1" type="UnityEngine.LayerMask"
-      id="_physicsMask" /><field value="2" type="System.Single" id="rayRange" /></reference></references></component>
+      /><field value="4" type="System.Single" id="_range" /><field value="False" type="System.Boolean"
+      id="_canDetectSelf" /><field value="44" type="System.Single" id="_horizontalAngle"
+      /><field value="87" type="System.Single" id="_verticalAngle" /><field value="False"
+      type="System.Boolean" id="_lineOfSight" /><field value="-5" type="UnityEngine.LayerMask"
+      id="_lineOfSightMask" /><field value="-1" type="UnityEngine.LayerMask" id="_physicsMask"
+      /><field value="2" type="System.Single" id="rayRange" /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 191156}
     - {fileID: 11400000, guid: 2a437b33c4456e04fa12b8245ad05fcf, type: 2}
