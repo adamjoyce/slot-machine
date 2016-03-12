@@ -34,7 +34,7 @@ public class SweepOnPlayer : RAINAction
         }
 
         Vector3 direction = (ai.WorkingMemory.GetItem<Vector3>("PlayerPosition") - ai.Body.transform.position);
-        if (direction.x > 0 && ai.Body.transform.localScale.x < 0 || direction.x < 0 && ai.Body.transform.localScale.x > 0)
+        if (direction.x > 0 && ai.Body.transform.localScale.x > 0 || direction.x < 0 && ai.Body.transform.localScale.x < 0)
             ai.Body.transform.localScale = new Vector3(-ai.Body.transform.localScale.x, ai.Body.transform.localScale.y, ai.Body.transform.localScale.z);
 
 
