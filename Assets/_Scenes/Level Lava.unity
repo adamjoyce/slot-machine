@@ -534,6 +534,7 @@ MonoBehaviour:
   estimatePlatformNumber: 10
   maxPlatformHeight: 2
   enemyNumber: 5
+  spawnProbability: 0.5
 --- !u!1 &1695751184 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 168380, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}
