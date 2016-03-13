@@ -32,8 +32,11 @@ public class SlotMachine : MonoBehaviour {
 
   private bool slotsSpinning = false;
 
-  // Initilisation / assignment.
-  private void Start() {
+    [SerializeField]
+    private string debugForceEnemy;
+
+    // Initilisation / assignment.
+    private void Start() {
     levelObjects = new GameObject[levels.Length];
     weaponObjects = new GameObject[weapons.Length];
     enemyObjects = new GameObject[enemies.Length];
@@ -123,8 +126,11 @@ public class SlotMachine : MonoBehaviour {
 
         PlayerPrefs.SetString("Weapon", results[1]);
         PlayerPrefs.SetString("Enemy", results[2]);
+                if (debugForceEnemy != "")
+                    PlayerPrefs.SetString("Enemy", debugForceEnemy);
 
-        leverButton.GetComponent<SpriteRenderer>().sprite = buttonNotPressed;
+
+                leverButton.GetComponent<SpriteRenderer>().sprite = buttonNotPressed;
         StartCoroutine(WaitAndLoad(3, "_Scenes/" + "Level " + results[0]));
       } else if (slotsTimer >= stopTime1) {
         animateSlot0 = false;

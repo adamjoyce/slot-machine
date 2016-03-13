@@ -17,7 +17,7 @@ public class ReturntoInitialPos : RAINAction
         if (ai.WorkingMemory.ItemExists("wallFound") && ai.WorkingMemory.GetItem<GameObject>("wallFound") != null)
         {
             Vector3 currentIniPos = ai.WorkingMemory.GetItem<Vector3>("InitialPosition");
-            currentIniPos.x = currentIniPos.x + 2*ai.Body.transform.position.x;
+            currentIniPos.x = currentIniPos.x - (currentIniPos-ai.Body.transform.position).x;
             ai.WorkingMemory.SetItem<Vector3>("InitialPosition", currentIniPos);
             if (ai.WorkingMemory.GetItem<float>("direction") == 1.0f)
             {
@@ -44,7 +44,8 @@ public class ReturntoInitialPos : RAINAction
         Vector3 initialPos = ai.WorkingMemory.GetItem<Vector3>("InitialPosition");
         if (Mathf.Abs((ai.Body.transform.position - ai.WorkingMemory.GetItem<Vector3>("InitialPosition")).y) < 0.5f)
         {
-            ai.WorkingMemory.SetItem<Vector3>("InitialPosition", new Vector3(99, 99, 99));
+            initialPos.z = 99;
+            ai.WorkingMemory.SetItem<Vector3>("InitialPosition", initialPos);
             return ActionResult.SUCCESS;
         }
 
