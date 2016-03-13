@@ -20,7 +20,7 @@ public class LevelGenerator : MonoBehaviour
     public int estimatePlatformNumber;
     public float maxPlatformHeight;
 
-    public int enemyNumber;
+    public int enemyFlyerNumber;
 
     private float gridHeight;
     private float gridWidth;
@@ -146,6 +146,7 @@ public class LevelGenerator : MonoBehaviour
                     continue;
                 }
 
+                // Determine the number of enemies to spawn for this platform.
                 float rand = Random.value;
                 if (rand >= spawnThreshold || enemies == 0) {
                     float x = platforms[i].transform.position.x;
@@ -171,6 +172,7 @@ public class LevelGenerator : MonoBehaviour
                     continue;
                 }
 
+                // Determine the number of enemies to spawn for this platform.
                 float rand = Random.value;
                 if (rand >= spawnThreshold || enemies == 0) {
                     float x = platforms[i].transform.position.x;
@@ -190,10 +192,20 @@ public class LevelGenerator : MonoBehaviour
 
         // Flyer.
         if (enemyType == "Flyer") {
-            for (int i = 0; i < enemyNumber; i++) {
-                float x = Random.Range(-gridWidth * 0.5f, gridWidth * 0.5f);
-                float y = Random.Range(maxPlatformHeight, gridHeight * 0.5f);
-                Instantiate(flyerPrefab, new Vector3(x, y, 0), Quaternion.identity);
+            for (int i = 0; i < platforms.Count; i++) {
+                // Skip the player platform.
+                if (platforms[i] == playerSpawnPlatform) {
+                    continue;
+                }
+
+                // Determine the number of enemies to spawn for this platform.
+                float rand = Random.value;
+                if (rand >= spawnThreshold || enemies == 0) {
+                    float x = Random.Range(-gridWidth * 0.5f, gridWidth * 0.5f);
+                    float y = Random.Range(maxPlatformHeight, gridHeight * 0.5f);
+                        Instantiate(flyerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
+                        enemies++;
+                }
             }
         }
     }
