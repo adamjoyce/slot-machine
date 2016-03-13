@@ -123,6 +123,9 @@ public class SlotMachine : MonoBehaviour
                 slotsAnimation = false;
                 // Detect results and load level.
                 string[] results = getSlotResults();
+                Debug.Log(results[0]);
+                Debug.Log(results[1]);
+                Debug.Log(results[2]);
 
                 PlayerPrefs.SetString("Level", results[0]);
                 PlayerPrefs.SetString("Weapon", results[1]);
@@ -138,7 +141,7 @@ public class SlotMachine : MonoBehaviour
             }
 
             // Simulates the time between animations.
-            if (slotsTimer - previousAnimationTime >= interval) {
+            if (slotsTimer - previousAnimationTime >= interval && slotsTimer < stopTime2) {
                 // Animate the first slot.
                 if (animateSlot0) {
                     AnimateSlots(levelObjects, ref slotVisibleIndex0);
