@@ -174,7 +174,7 @@ public class SlotMachine : MonoBehaviour
     // Get slot results.
     private string[] getSlotResults()
     {
-        return new string[] { levels[slotVisibleIndex0], weapons[slotVisibleIndex1], enemies[slotVisibleIndex2] };
+        return new string[] { "Lava"/*levels[slotVisibleIndex0]*/, weapons[slotVisibleIndex1], enemies[slotVisibleIndex2] };
     }
 
     // Wait for a number of seconds.
