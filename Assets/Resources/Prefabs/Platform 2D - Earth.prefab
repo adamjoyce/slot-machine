@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5019996}
   - 233: {fileID: 23321016}
   m_Layer: 0
-  m_Name: Platform 2D -Earth
+  m_Name: Platform 2D - Earth
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

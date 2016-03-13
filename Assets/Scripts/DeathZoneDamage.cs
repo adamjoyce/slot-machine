@@ -22,7 +22,7 @@ public class DeathZoneDamage : MonoBehaviour
         if (coll.gameObject.tag == "Player") {
             coll.gameObject.GetComponent<PlayerController>().inflictDamage(50, gameObject.GetComponent<Transform>().position);
         } else if (coll.gameObject.tag == "Enemy") {
-            coll.gameObject.GetComponent<Enemy>().inflictDamage(50);
+            coll.gameObject.GetComponent<Enemy>().inflictDamage(100);
         }
     }
 }
