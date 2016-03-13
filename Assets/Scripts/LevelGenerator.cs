@@ -226,12 +226,4 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
-
-    //
-    private void spawnEarthLevelEnemies(string enemyType)
-    {
-        if (enemyType == "Charger") {
-
-        }
-    }
 }

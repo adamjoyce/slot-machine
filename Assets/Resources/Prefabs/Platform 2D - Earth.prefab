@@ -53,9 +53,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142556}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9232912, y: 0.9883315, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.00000027673923, w: 1}
+  m_LocalPosition: {x: -0.18, y: -0.58, z: 0}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children:
   - {fileID: 451702}
   m_Father: {fileID: 0}
@@ -68,7 +68,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142556}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -88,9 +88,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: 3799903572f1c2c4c8dc94997b453b44, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.05}
+  m_Offset: {x: 0.00000043710074, y: 0.050000012}
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.22}
+  m_Size: {x: 2.0061393, y: 0.22}
 --- !u!114 &11402424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 813af4acda75e61438b57872dbe5ecb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ccbb4335669b5b4e8dff2747d32f55f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,15 +169,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.18, y: -0.58}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -20
+    m_UpperAngle: 20
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
