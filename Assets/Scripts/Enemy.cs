@@ -9,11 +9,20 @@ public class Enemy : MonoBehaviour {
     float fireballVelocity = 4.0f;
     private RAIN.Core.AI ai;
 
+    private GameObject leftWall;
+    private GameObject rightWall;
+    private GameObject ceiling;
+    private GameObject floor;
+
     // Use this for initialization
     void Start () {
         ai = transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI;
         nextFireball = 0;
 
+        leftWall = GameObject.Find("Left Wall");
+        rightWall= GameObject.Find("Right Wall");
+        ceiling= GameObject.Find("Ceiling");
+        floor = GameObject.Find("Floor");
 
         ai.WorkingMemory.SetItem("forceTurn", false);
         int randDirection = Random.Range(0, 2);
@@ -35,6 +44,7 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        CheckIfInBounds();
 
             if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
         {
@@ -55,6 +65,15 @@ public class Enemy : MonoBehaviour {
             }
         }
 	}
+
+    private void CheckIfInBounds()
+    {
+        if ((leftWall != null && transform.position.x < leftWall.transform.position.x)
+            || (rightWall != null && transform.position.x > rightWall.transform.position.x)
+            || (floor != null && transform.position.y < floor.transform.position.y)
+            || (ceiling != null && transform.position.y > ceiling.transform.position.y))
+            Destroy(this.gameObject);
+    }
 
     public int inflictDamage(int damage)
     {
