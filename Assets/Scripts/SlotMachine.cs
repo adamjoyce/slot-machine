@@ -124,9 +124,9 @@ public class SlotMachine : MonoBehaviour
                 slotsAnimation = false;
                 // Detect results and load level.
                 string[] results = getSlotResults();
-                Debug.Log(results[0]);
-                Debug.Log(results[1]);
-                Debug.Log(results[2]);
+                //Debug.Log(results[0]);
+                //Debug.Log(results[1]);
+                //Debug.Log(results[2]);
 
                 PlayerPrefs.SetString("Level", results[0]);
                 PlayerPrefs.SetString("Weapon", results[1]);
@@ -178,7 +178,7 @@ public class SlotMachine : MonoBehaviour
     // Get slot results.
     private string[] getSlotResults()
     {
-        return new string[] { "Lava"/*levels[slotVisibleIndex0]*/, weapons[slotVisibleIndex1], enemies[slotVisibleIndex2] };
+        return new string[] { levels[slotVisibleIndex0], weapons[slotVisibleIndex1], enemies[slotVisibleIndex2] };
     }
 
     // Wait for a number of seconds.
