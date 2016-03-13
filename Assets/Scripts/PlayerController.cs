@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
         weapon.transform.parent = this.transform;
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0), 1.0f);
+    }
+
     void Update()
     {
         if (nextBullet > 0)
@@ -101,19 +107,29 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(DisableDagger(0.5f));
             }
         }
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (true || Input.GetKey(KeyCode.Mouse0))
         {
             Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
             Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
+            Debug.Log(mouseposition.ToString() + " - " + currentposition.ToString());
             int direction = 1;
+            if ((facingRight && mouseposition.x < currentposition.x) || (!facingRight && mouseposition.x > currentposition.x))
+            {
+                facingRight = !facingRight;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
+            }
             if (!facingRight) direction = -1;
             if (weaponName == "Gun" && nextBullet <= 0)
             {
                 GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position + new Vector3(direction *0.4f,0.5f,0), new Quaternion());
                 newBullet.transform.parent = GameObject.Find("BulletHolder").transform;
                 Vector2 dir = (mouseposition - currentposition);
-                if (dir.x < 0) bulletVelocity *= -1;
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletVelocity, 0);
+                if (dir.x < 0)
+                    newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletVelocity * -1, 0);
+                else
+                    newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletVelocity, 0);
                 nextBullet = bulletCD;
             }
             else if (weaponName == "RocketLauncher" && nextBullet <= 0)
@@ -129,13 +145,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if((facingRight && mouseposition.x < currentposition.x) || (!facingRight && mouseposition.x > currentposition.x))
-            {
-                facingRight = !facingRight;
-                Vector3 theScale = transform.localScale;
-                theScale.x *= -1;
-                transform.localScale = theScale;
-            }
         }
 
     }
