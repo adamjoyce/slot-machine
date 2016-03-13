@@ -48,6 +48,7 @@ public class SlotMachine : MonoBehaviour
         // Level setup.
         for (int i = 0; i < levels.Length; i++) {
             levelObjects[i] = GameObject.Find(levels[i]);
+
             if (i == randSlot0) {
                 levelObjects[i].GetComponent<SpriteRenderer>().enabled = true;
                 slotVisibleIndex0 = i;
