@@ -31,7 +31,7 @@ GameObject:
   - 61: {fileID: 6130884}
   - 114: {fileID: 11460990}
   m_Layer: 9
-  m_Name: Enemy - Flying
+  m_Name: Enemy - Flyer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

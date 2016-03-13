@@ -11,7 +11,7 @@ GameObject:
   - 58: {fileID: 5835576}
   - 50: {fileID: 5095710}
   m_Layer: 8
-  m_Name: Platform 2D
+  m_Name: Platform 2D - Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
