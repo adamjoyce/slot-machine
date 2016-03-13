@@ -179,8 +179,8 @@ public class LevelGenerator : MonoBehaviour
                     float y = platforms[i].transform.position.y;
 
                     if (rand >= doubleSpawnThreshold) {
-                        Instantiate(chargerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
-                        Instantiate(chargerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
+                        Instantiate(spitterPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
+                        Instantiate(spitterPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
                         enemies += 2;
                     } else {
                         Instantiate(spitterPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
