@@ -7,20 +7,34 @@ public class Enemy : MonoBehaviour {
     public float nextFireball;
     public float fireballCD = 0.6f;
     float fireballVelocity = 4.0f;
+    private RAIN.Core.AI ai;
 
+    private GameObject leftWall;
+    private GameObject rightWall;
+    private GameObject ceiling;
+    private GameObject floor;
 
     // Use this for initialization
     void Start () {
-
+        ai = transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI;
         nextFireball = 0;
 
+        leftWall = GameObject.Find("Left Wall");
+        rightWall= GameObject.Find("Right Wall");
+        ceiling= GameObject.Find("Ceiling");
+        floor = GameObject.Find("Floor");
 
-        transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem("forceTurn", false);
+        ai.WorkingMemory.SetItem("forceTurn", false);
         int randDirection = Random.Range(0, 2);
         if (randDirection == 0)
             randDirection = -1;
-        if (!this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.ItemExists("direction"))
-            this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.SetItem<float>("direction", randDirection);
+        if (!ai.WorkingMemory.ItemExists("direction"))
+            ai.WorkingMemory.SetItem<float>("direction", randDirection);
+
+        if (randDirection == -1)
+        {
+            ai.Senses.Sensors[1].AngleOffset = new Vector3(ai.Senses.Sensors[1].AngleOffset.x, -ai.Senses.Sensors[1].AngleOffset.y, ai.Senses.Sensors[1].AngleOffset.z);
+        }
 
         var anim = GetComponent<Animator>();
         AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);//could replace 0 by any other animation layer index
@@ -30,6 +44,7 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        CheckIfInBounds();
 
             if (this.name.Length >= 15 && this.name.Substring(0, 15) == "Enemy - Spitter")
         {
@@ -37,7 +52,7 @@ public class Enemy : MonoBehaviour {
                 nextFireball -= Time.deltaTime;
             else
             {
-                var player = this.transform.GetChild(0).GetComponent<RAIN.Core.AIRig>().AI.WorkingMemory.GetItem<GameObject>("playerFound");
+                var player = ai.WorkingMemory.GetItem<GameObject>("playerFound");
                 if (player != null && Mathf.Abs((player.transform.position - transform.position).magnitude) < 3.0f)
                 {
                     Vector3 direction = ((player.transform.position + new Vector3(0, 0.3f, 0)) - transform.position);
@@ -50,6 +65,15 @@ public class Enemy : MonoBehaviour {
             }
         }
 	}
+
+    private void CheckIfInBounds()
+    {
+        if ((leftWall != null && transform.position.x < leftWall.transform.position.x)
+            || (rightWall != null && transform.position.x > rightWall.transform.position.x)
+            || (floor != null && transform.position.y < floor.transform.position.y)
+            || (ceiling != null && transform.position.y > ceiling.transform.position.y))
+            Destroy(this.gameObject);
+    }
 
     public int inflictDamage(int damage)
     {

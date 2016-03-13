@@ -10,31 +10,33 @@ public class SweepOnPlayer : RAINAction
     public override void Start(RAIN.Core.AI ai)
     {
         base.Start(ai);
-        ai.WorkingMemory.SetItem<Vector3>("InitialPosition", new Vector3(99, 99, 99));
-        ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(99, 99, 99));
+        ai.WorkingMemory.SetItem<Vector3>("InitialPosition", new Vector3(0, 0, 99));
+        ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(0, 0, 99));
     }
 
     public override ActionResult Execute(RAIN.Core.AI ai)
     {
         if (ai.WorkingMemory.ItemExists("wallFound") && ai.WorkingMemory.GetItem<GameObject>("wallFound") != null)
         {
-            ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(99, 99, 99));
+            ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(0, 0, 99));
             return ActionResult.SUCCESS;
         }
         Vector3 initialPos = ai.WorkingMemory.GetItem<Vector3>("InitialPosition");
-        if (initialPos == new Vector3(99, 99, 99))
+        if (initialPos.z == 99)
         {
             ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", ai.WorkingMemory.GetItem<GameObject>("playerFound").transform.position + new Vector3(0,0.3f,0));
             ai.WorkingMemory.SetItem<Vector3>("InitialPosition", new Vector3(ai.WorkingMemory.GetItem<GameObject>("playerFound").transform.position.x, ai.Body.transform.position.y, 0));
         }
         else if((ai.Body.transform.position - ai.WorkingMemory.GetItem<Vector3>("PlayerPosition")).magnitude < 0.1f)
         {
-                ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", new Vector3(99,99,99));
+            Vector3 playerPos = ai.WorkingMemory.GetItem<Vector3>("PlayerPosition");
+            playerPos.z = 99;
+                ai.WorkingMemory.SetItem<Vector3>("PlayerPosition", playerPos);
             return ActionResult.SUCCESS;
         }
 
         Vector3 direction = (ai.WorkingMemory.GetItem<Vector3>("PlayerPosition") - ai.Body.transform.position);
-        if (direction.x > 0 && ai.Body.transform.localScale.x < 0 || direction.x < 0 && ai.Body.transform.localScale.x > 0)
+        if (direction.x > 0 && ai.Body.transform.localScale.x > 0 || direction.x < 0 && ai.Body.transform.localScale.x < 0)
             ai.Body.transform.localScale = new Vector3(-ai.Body.transform.localScale.x, ai.Body.transform.localScale.y, ai.Body.transform.localScale.z);
 
 
