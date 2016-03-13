@@ -208,10 +208,11 @@ public class LevelGenerator : MonoBehaviour
                 }
 
                 // Determine the number of enemies to spawn for this platform.
+                float offset = 0.5f;
                 float rand = Random.value;
                 if (rand >= spawnThreshold || enemies == 0) {
-                    float x = Random.Range(-gridWidth * 0.5f, gridWidth * 0.5f);
-                    float y = Random.Range(maxPlatformHeight, gridHeight * 0.5f - 0.5f);
+                    float x = Random.Range(-gridWidth * 0.5f + offset, gridWidth * 0.5f - offset);
+                    float y = Random.Range(maxPlatformHeight, gridHeight * 0.5f - offset);
                         Instantiate(flyerPrefab, new Vector3(x, y + 0.5f, 0), Quaternion.identity);
                         enemies++;
                 }
