@@ -225,7 +225,6 @@ MonoBehaviour:
   leverButton: {fileID: 1927169557}
   buttonNotPressed: {fileID: 21300002, guid: dcfa333927131f743b36c8bdc7f60b90, type: 3}
   buttonPressed: {fileID: 21300000, guid: dcfa333927131f743b36c8bdc7f60b90, type: 3}
-  debugForceEnemy: 
 --- !u!1 &715711880
 GameObject:
   m_ObjectHideFlags: 0

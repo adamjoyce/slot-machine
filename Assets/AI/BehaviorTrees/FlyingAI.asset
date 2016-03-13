@@ -19,7 +19,7 @@ MonoBehaviour:
       sensor=&quot;&amp;quot;WallSensor&amp;quot;&quot; repeatuntil=&quot;running&quot;
       name=&quot;detect wall&quot; matchtype=&quot;any&quot; entityobjectvariable=&quot;wallFound&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
-      aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;GroundAspect&amp;quot;&quot;
+      aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;WallAspect&amp;quot;&quot;
       /&gt;&lt;detect sensor=&quot;&amp;quot;Enemy Sensor&amp;quot;&quot; repeatuntil=&quot;running&quot;
       name=&quot;detect player&quot; matchtype=&quot;any&quot; entityobjectvariable=&quot;playerFound&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;

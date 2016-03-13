@@ -107,11 +107,10 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(DisableDagger(0.5f));
             }
         }
-        if (true || Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
             Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
-            Debug.Log(mouseposition.ToString() + " - " + currentposition.ToString());
             int direction = 1;
             if ((facingRight && mouseposition.x < currentposition.x) || (!facingRight && mouseposition.x > currentposition.x))
             {
