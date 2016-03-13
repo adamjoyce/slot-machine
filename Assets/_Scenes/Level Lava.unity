@@ -533,8 +533,9 @@ MonoBehaviour:
   ceiling: {fileID: 498421392}
   estimatePlatformNumber: 10
   maxPlatformHeight: 2
-  enemyNumber: 5
-  spawnProbability: 0.5
+  enemyFlyerNumber: 0
+  spawnThreshold: 0.2
+  doubleSpawnThreshold: 0.8
 --- !u!1 &1695751184 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 168380, guid: 9b86d8367aae7cc4d8ea9515148c1f66, type: 2}

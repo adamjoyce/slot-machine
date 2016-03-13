@@ -25,6 +25,8 @@ public class LevelGenerator : MonoBehaviour
     private float gridHeight;
     private float gridWidth;
 
+    private float lavaHeight;
+
     private List<GameObject> platforms;
 
     private GameObject playerSpawnPlatform;
@@ -36,6 +38,8 @@ public class LevelGenerator : MonoBehaviour
         float frustrumWidth = frustrumHeight * camera.aspect;
         gridHeight = frustrumHeight;
         gridWidth = frustrumWidth;
+
+        lavaHeight = -3.0f;
 
         platforms = new List<GameObject>();
 
@@ -96,8 +100,13 @@ public class LevelGenerator : MonoBehaviour
             float width = gridWidth * 0.5f;
             float height = gridHeight * 0.5f;
 
+            // For the lava level, remove platforms that spawn in the lava.
+            if (PlayerPrefs.GetString("Level") == "Lava" && platY <= lavaHeight) {
+                Destroy(platforms[i]);
+            }
+
             // Destroy platforms outside of the bounds.
-            if (platX >= width || platX <= -width || platY >= maxPlatformHeight || platY <= -height) {
+                if (platX >= width || platX <= -width || platY >= maxPlatformHeight || platY <= -height) {
                 Destroy(platforms[i]);
             } else {
                 Destroy(platforms[i].GetComponent<Rigidbody2D>());
@@ -207,6 +216,14 @@ public class LevelGenerator : MonoBehaviour
                         enemies++;
                 }
             }
+        }
+    }
+
+    //
+    private void spawnEarthLevelEnemies(string enemyType)
+    {
+        if (enemyType == "Charger") {
+
         }
     }
 }
