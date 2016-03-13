@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
             Vector2 mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
             Vector2 currentposition = new Vector2(transform.position.x, transform.position.y);
             int direction = 1;
-            if (!facingRight) direction *= -1;
+            if (!facingRight) direction = -1;
             if (weaponName == "Gun" && nextBullet <= 0)
             {
                 GameObject newBullet = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Bullet"), this.transform.position + new Vector3(direction *0.4f,0.5f,0), new Quaternion());
