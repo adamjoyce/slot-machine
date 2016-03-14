@@ -1,5 +1,5 @@
 #Battle Slots
-
+![alt tag](https://raw.githubusercontent.com/adamjoyce/slot-machine/master/screenshot_slot_machine.PNG)
 ##The Premise
 
 Battle Slots utilises a slot machine mechanic to randomly generate a battle scenario, with varying degrees of difficulty. These are quickfire battles with high intensity.
