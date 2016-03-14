@@ -102,12 +102,8 @@ public class SlotMachine : MonoBehaviour
                     float max = 7.0f;
                     float increment = 1.0f;
                     stopTime0 = Random.Range(min, max);
-                    //min += increment;
-                    //max += increment;
-                    stopTime1 = stopTime0 + increment;//Random.Range(min, max);
-                                                      //min += increment;
-                                                      //max += increment;
-                    stopTime2 = stopTime1 + increment;//Random.Range(min, max);
+                    stopTime1 = stopTime0 + increment;
+                    stopTime2 = stopTime1 + increment;
 
                     // Allows the slots animation to play.
                     slotsAnimation = true;
