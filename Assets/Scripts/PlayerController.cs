@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator KillPlayer()
     {
         GetComponent<Animator>().Play("Death");
-        transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(1.6f);
         Destroy(this.gameObject);
     }
