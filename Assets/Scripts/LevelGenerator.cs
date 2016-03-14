@@ -48,6 +48,7 @@ public class LevelGenerator : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Enemies"), true);
     }
 
+    // Generates a number of platforms to be used in the level.
     private void GeneratePlatforms()
     {
         float width = gridWidth * 0.5f;
@@ -68,6 +69,7 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    // Determines when the sphere colliders of the platforms are at rest and the level generation can continue.
     IEnumerator CheckObjectsAreStill()
     {
         Debug.Log("Checking");
@@ -91,6 +93,7 @@ public class LevelGenerator : MonoBehaviour
         spawnEnemies(PlayerPrefs.GetString("Enemy"));
     }
 
+    // Removes platforms that are outside the boundaries and enabled the necessary platform components.
     private void CullPlatformElements()
     {
         List<GameObject> plats = new List<GameObject>();
@@ -114,7 +117,7 @@ public class LevelGenerator : MonoBehaviour
         platforms = plats;
     }
 
-    //
+    // After platform placement enable the level boundaries.
     private void enableBoundaries()
     {
         floor.SetActive(true);
@@ -127,18 +130,19 @@ public class LevelGenerator : MonoBehaviour
     private void spawnPlayer()
     {
         int index = 0;
-        //do {
+
         index = Random.Range(0, platforms.Count);
         float platX = platforms[index].transform.position.x;
         float platY = platforms[index].transform.position.y;
-        //} while ();
+
         playerSpawnPlatform = platforms[index];
         Instantiate(playerPrefab, new Vector3(platX, platY, 0), Quaternion.identity);
     }
 
     public float spawnThreshold = 0.2f;
     public float doubleSpawnThreshold = 0.8f;
-    //
+
+    // Spawns enemies dependant on enemy type.
     private void spawnEnemies(string enemyType)
     {
         int enemies = 0;
