@@ -79,7 +79,9 @@ public class Enemy : MonoBehaviour {
     {
         HP -= damage;
         if (HP <= 0)
+        {
             StartCoroutine(KillEnemy());
+        }
         return damage;
     }
 
@@ -89,6 +91,8 @@ public class Enemy : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
+
+    
 
     void OnTriggerEnter2D(Collider2D coll)
     {

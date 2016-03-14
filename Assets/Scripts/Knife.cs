@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Knife : MonoBehaviour {
 
-    public int knifeDamage = 15;
+    public int knifeDamage = 55;
     public List<GameObject> enemiesHit; 
 	// Use this for initialization
 	void Start () {

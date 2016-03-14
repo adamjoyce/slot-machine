@@ -236,7 +236,8 @@ public class PlayerController : MonoBehaviour
         }
         else if(collision.gameObject.name == "Ground" || collision.gameObject.name == "Platform" || collision.gameObject.tag == "Platform")
         {
-            jumpStatus = JumpStatus.GROUND;
+            if(collision.transform.position.y < transform.position.y)
+                jumpStatus = JumpStatus.GROUND;
         }
     }
 
