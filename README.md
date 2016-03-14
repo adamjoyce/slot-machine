@@ -1,5 +1,6 @@
 #Battle Slots
 ![alt tag](https://raw.githubusercontent.com/adamjoyce/slot-machine/master/screenshot_slot_machine.PNG)
+
 ##The Premise
 
 Battle Slots utilises a slot machine mechanic to randomly generate a battle scenario, with varying degrees of difficulty. These are quickfire battles with high intensity.
@@ -19,6 +20,8 @@ The resultant information is then stored as a string PlayerPref so that is can b
 
 ##Level Generation
 The levels consist of a number of procedurally placed floating platforms and some environment hazards.  The idea was the have three levels that vary in difficulty.  The water level is relatively tame, consisting simply of a series of floating platforms.  The fire level has an added hazard in the form of a lava pit that will kill anything that comes into contact with it.  The earth level contains a similar spiked ‘death zone’ as well as containing a large single platform that pivots under weight.  This level was designed for our boss encounters.
+
+![alt tag](https://raw.githubusercontent.com/adamjoyce/slot-machine/master/screenshot_water.PNG)
 
 To obtain the required randomness for the platform locations, each platform is accompanied by a sphere collider.  The platforms are placed randomly within the bounds of the scene and the physics engine is run for a number of steps.  By using this technique any of the platform spheres that are overlapping and pushed away from one another resulting in an evenly spaced out set of platforms.  The obvious downside of this technique is that platforms may get pushed outside the camera boundaries.  These platforms are simply culled.
 Once all platforms have come to rest, their sphere collider is disabled and their SpriteRenderer is enabled making them visible in the scene.  At this point the player and enemies are ready to be spawned.
@@ -48,9 +51,9 @@ The AI for the enemies is controlled using the RAIN AI Unity module.  While each
 In hindsight, it may have been more sensible to implement the AI component of the game without using the RAIN AI module.  We found that RAIN often overcomplicated the relatively simple AI we were attempting to implement, causing more problems than it was worth.  Implementing our own custom AI would have alleviated these issues but in turn required a more complicated method of detecting the player character.
 
 ##The Team
-Jean-Pascal Evette - Programmer
-Adam Joyce - Programmer
-Ciaran Wilson - Artist
+Jean-Pascal Evette - Programmer - https://github.com/JeanPascalEvette
+Adam Joyce - Programmer - https://github.com/adamjoyce
+Ciaran Wilson - Artist - https://github.com/ciaranwilson
 
 ##Youtube Demonstration Video
 https://youtu.be/cMoeV2deOiI
